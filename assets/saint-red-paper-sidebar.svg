@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Saint Red Paper sidebar preview</title>
+  <desc id="desc">A preview emphasizing the white paper sidebar treatment with restrained red active accents.</desc>
+  <rect width="1200" height="860" fill="#f7f1ed"/>
+  <rect x="60" y="54" width="1080" height="752" rx="28" fill="#ffffff" stroke="#e8dfda"/>
+  <rect x="60" y="54" width="322" height="752" rx="28" fill="#fffefe"/>
+  <rect x="382" y="54" width="1" height="752" fill="#ece3df"/>
+  <rect x="106" y="108" width="160" height="14" rx="7" fill="#e9e1dc"/>
+  <rect x="106" y="152" width="230" height="52" rx="16" fill="#fff7f5" stroke="#f0d7d2"/>
+  <rect x="106" y="220" width="230" height="52" rx="16" fill="#ffffff" stroke="#ece5e1"/>
+  <rect x="106" y="288" width="230" height="52" rx="16" fill="#ffffff" stroke="#ece5e1"/>
+  <rect x="106" y="376" width="124" height="10" rx="5" fill="#c4bbb5"/>
+  <rect x="106" y="402" width="196" height="10" rx="5" fill="#ece4e0"/>
+  <rect x="106" y="430" width="182" height="10" rx="5" fill="#ece4e0"/>
+  <rect x="106" y="458" width="210" height="10" rx="5" fill="#ece4e0"/>
+  <line x1="94" y1="178" x2="94" y2="194" stroke="#cd2623" stroke-width="4" stroke-linecap="round"/>
+  <rect x="448" y="120" width="440" height="16" rx="8" fill="#2f342d"/>
+  <rect x="448" y="154" width="110" height="3" rx="1.5" fill="#cd2623"/>
+  <rect x="448" y="220" width="640" height="12" rx="6" fill="#6b655f"/>
+  <rect x="448" y="248" width="602" height="12" rx="6" fill="#6b655f"/>
+  <rect x="448" y="276" width="568" height="12" rx="6" fill="#6b655f"/>
+  <rect x="448" y="336" width="600" height="228" rx="20" fill="#fffdfc" stroke="#eadfd9"/>
+  <line x1="484" y1="378" x2="1012" y2="378" stroke="#cd2623" stroke-width="3"/>
+  <line x1="484" y1="432" x2="1012" y2="432" stroke="#e6dfdb" stroke-width="2"/>
+  <line x1="484" y1="486" x2="1012" y2="486" stroke="#e6dfdb" stroke-width="2"/>
+  <rect x="484" y="350" width="120" height="12" rx="6" fill="#3f3a34"/>
+  <rect x="668" y="350" width="160" height="12" rx="6" fill="#3f3a34"/>
+  <rect x="484" y="396" width="150" height="10" rx="5" fill="#6f6962"/>
+  <rect x="668" y="396" width="110" height="10" rx="5" fill="#6f6962"/>
+  <rect x="860" y="396" width="120" height="10" rx="5" fill="#6f6962"/>
+  <rect x="484" y="450" width="170" height="10" rx="5" fill="#6f6962"/>
+  <rect x="668" y="450" width="140" height="10" rx="5" fill="#6f6962"/>
+  <rect x="860" y="450" width="96" height="10" rx="5" fill="#6f6962"/>
+  <rect x="484" y="504" width="138" height="10" rx="5" fill="#6f6962"/>
+  <rect x="668" y="504" width="164" height="10" rx="5" fill="#6f6962"/>
+  <rect x="448" y="650" width="320" height="34" rx="17" fill="#fff4f0" stroke="#efd8d3"/>
+  <text x="448" y="742" font-family="SUIT, -apple-system, BlinkMacSystemFont, sans-serif" font-size="40" font-weight="760" fill="#2f342d">Sidebar Preview</text>
+  <text x="448" y="782" font-family="SUIT, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#756d66">Quiet white panels, muted text, and a restrained red active state.</text>
+</svg>

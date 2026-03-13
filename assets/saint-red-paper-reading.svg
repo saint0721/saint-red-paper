@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Saint Red Paper reading preview</title>
+  <desc id="desc">A preview emphasizing the reading surface, headings, callouts, and paper-like spacing.</desc>
+  <rect width="1200" height="860" fill="#f6efea"/>
+  <rect x="82" y="54" width="1036" height="752" rx="28" fill="#ffffff" stroke="#e9dfda"/>
+  <rect x="160" y="124" width="282" height="20" rx="10" fill="#31362f"/>
+  <rect x="160" y="160" width="92" height="4" rx="2" fill="#cd2623"/>
+  <rect x="160" y="216" width="834" height="13" rx="6.5" fill="#6d6761"/>
+  <rect x="160" y="246" width="804" height="13" rx="6.5" fill="#6d6761"/>
+  <rect x="160" y="276" width="748" height="13" rx="6.5" fill="#6d6761"/>
+  <rect x="160" y="340" width="182" height="16" rx="8" fill="#3a3631"/>
+  <rect x="160" y="372" width="74" height="3" rx="1.5" fill="#cd2623"/>
+  <rect x="160" y="422" width="844" height="126" rx="20" fill="#fff9f7" stroke="#eedcd7"/>
+  <rect x="178" y="440" width="228" height="12" rx="6" fill="#3e3a35"/>
+  <rect x="178" y="472" width="790" height="10" rx="5" fill="#726c66"/>
+  <rect x="178" y="500" width="752" height="10" rx="5" fill="#726c66"/>
+  <line x1="178" y1="438" x2="178" y2="534" stroke="#cd2623" stroke-width="4" stroke-linecap="round"/>
+  <rect x="160" y="604" width="224" height="14" rx="7" fill="#3f3b35"/>
+  <rect x="160" y="636" width="102" height="3" rx="1.5" fill="#cd2623"/>
+  <rect x="160" y="686" width="820" height="12" rx="6" fill="#716b65"/>
+  <rect x="160" y="714" width="778" height="12" rx="6" fill="#716b65"/>
+  <rect x="160" y="742" width="690" height="12" rx="6" fill="#716b65"/>
+  <circle cx="988" cy="136" r="10" fill="#cd2623"/>
+  <circle cx="1022" cy="136" r="10" fill="#efc250"/>
+  <circle cx="1056" cy="136" r="10" fill="#69ad72"/>
+  <text x="160" y="86" font-family="SUIT, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" letter-spacing="2" fill="#8f857e">SAINT RED PAPER</text>
+</svg>
