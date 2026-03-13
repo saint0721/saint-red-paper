@@ -8,9 +8,9 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 
 | Workspace | Reading surface |
 | --- | --- |
-| ![Sidebar preview](assets/saint-red-paper-sidebar.svg) | ![Reading preview](assets/saint-red-paper-reading.svg) |
+| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) |
 
-The preview assets above are lightweight repository renders. Add real Obsidian screenshots before public gallery submission for final polish.
+The preview assets above are captured from a live Obsidian workspace using the bundled theme.
 
 ## Highlights
 
@@ -90,8 +90,8 @@ Before publishing a release, verify:
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
-- `assets/saint-red-paper-sidebar.svg`: Sidebar-focused preview
-- `assets/saint-red-paper-reading.svg`: Reading surface preview
+- `assets/saint-red-paper-workspace.png`: Live Obsidian workspace preview
+- `assets/saint-red-paper-reading.png`: Live reading surface preview
 - `CHANGELOG.md`: Release notes
 
 ## Repository
@@ -105,5 +105,5 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## Public submission notes
 
-- The repository currently includes branded SVG previews. Replace or supplement them with full UI screenshots before submitting the theme to a public gallery.
+- The repository now includes live Obsidian screenshots for README previews. Capture both Reading View and Live Preview before submitting the theme to a public gallery.
 - Test both Reading View and Live Preview on the notes you use most often, especially Dataview-heavy notes and long tables.
