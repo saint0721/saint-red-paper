@@ -2,7 +2,7 @@
 
 Saint Red Paper is a paper-white Obsidian theme for research notes, lab logs, and long-form technical writing. It stays bright and quiet by default, uses red only where structure needs emphasis, and folds the main sidebar, callout, tab, and typography refinements into the theme itself instead of depending on a pile of snippets.
 
-![Saint Red Paper cover](assets/saint-red-paper-cover.svg)
+![Saint Red Paper hero preview](assets/saint-red-paper-hero.png)
 
 ## Preview
 
@@ -91,6 +91,7 @@ If you plan to share the theme publicly, verify:
 
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
+- `assets/saint-red-paper-hero.png`: Main live workspace hero image
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
 - `assets/saint-red-paper-workspace.png`: Live Obsidian workspace preview
 - `assets/saint-red-paper-reading.png`: Live reading surface preview
