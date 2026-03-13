@@ -1,0 +1,14 @@
+memento_version: 1
+timestamp: 2026-03-13T17:36:17+0900
+repo: /Users/saintkim/Library/CloudStorage/GoogleDrive-saintkim0721@gmail.com/내 드라이브/Workspace/01. Project/saint-red-paper
+branch: main
+commit: HEAD
+session_file: /Users/saintkim/.codex/sessions/2026/03/13/rollout-2026-03-13T16-59-37-019ce635-47f2-7f92-878e-f201fb62b5ca.jsonl
+session_id: rollout-2026-03-13T16-59-37-019ce635-47f2-7f92-878e-f201fb62b5ca
+turn_id: 019ce636-2749-7b40-9cc1-8e771e05da1b
+summary: Add live Obsidian preview captures
+files:
+- CHANGELOG.md
+- README.md
+- assets/saint-red-paper-reading.png
+- assets/saint-red-paper-workspace.png
