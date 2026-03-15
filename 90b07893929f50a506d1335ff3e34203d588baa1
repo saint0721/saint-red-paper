@@ -1,0 +1,19 @@
+memento_version: 1
+timestamp: 2026-03-15T18:52:35+0900
+repo: /Users/saintkim/saint-red-paper
+branch: main
+commit: 90b07893929f50a506d1335ff3e34203d588baa1
+session_file: /Users/saintkim/.codex/sessions/2026/03/15/rollout-2026-03-15T14-30-38-019ceff9-98ff-79e0-b1cc-e105c2fe5359.jsonl
+session_id: rollout-2026-03-15T14-30-38-019ceff9-98ff-79e0-b1cc-e105c2fe5359
+turn_id: 019cf0d8-ea68-7822-9dae-29ffd4079e1f
+summary: Use actual note captures for preview assets
+files:
+- CHANGELOG.md
+- README.md
+- assets/saint-red-paper-community.png
+- assets/saint-red-paper-dark.png
+- assets/saint-red-paper-hero.png
+- assets/saint-red-paper-reading.png
+- assets/saint-red-paper-workspace.png
+- manifest.json
+- versions.json
