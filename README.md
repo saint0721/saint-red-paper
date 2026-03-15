@@ -12,6 +12,26 @@ Saint Red Paper is a paper-white Obsidian theme for research notes, lab logs, an
 
 The preview assets above are real captures from the live `Theme_Saint_Red_Paper_Demo.md` note inside Obsidian. The main workspace preview now shows the left sidebar, a live Dataview table in the note surface, a graph view in the upper-right dock, and an `Agent Client` panel in the lower-right dock so the screenshot reads like a real working setup instead of a staged mockup.
 
+## Community Theme Metadata
+
+If you want to submit Saint Red Paper to the official Obsidian community theme list, the current ready-to-paste metadata is:
+
+```json
+{
+  "name": "Saint Red Paper",
+  "author": "saintkim",
+  "repo": "saint0721/saint-red-paper",
+  "screenshot": "assets/saint-red-paper-community.png",
+  "modes": ["light"]
+}
+```
+
+Notes:
+
+- `modes` is currently declared as `["light"]` because Saint Red Paper is intentionally tuned and documented as a light-mode-first theme.
+- `publish` is omitted for now because Obsidian Publish support has not been explicitly validated yet.
+- The community screenshot asset is a real 16:9 capture prepared for submission review.
+
 ## What It Changes
 
 - Keeps the main canvas close to white paper instead of tinting the whole workspace
@@ -105,6 +125,7 @@ If you plan to share the theme publicly, verify:
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
 - `assets/saint-red-paper-hero.png`: Main live workspace capture
+- `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
 - `assets/saint-red-paper-workspace.png`: Live workspace preview with Dataview, graph, and Agent Client
 - `assets/saint-red-paper-reading.png`: Live reading surface preview
