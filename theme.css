@@ -938,7 +938,7 @@ a.tag,
   color: var(--gh-sidebar-text) !important;
   border-color: var(--gh-sidebar-border) !important;
   border-radius: 8px !important;
-  box-shadow: 0 4px 10px -18px rgba(122, 79, 73, 0.10), inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) !important;
+  box-shadow: 0 6px 14px -18px rgba(122, 79, 73, 0.12), inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) !important;
 }
 
 .theme-light .workspace-split.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
@@ -975,7 +975,7 @@ a.tag,
   border: 1px solid var(--gh-sidebar-border-soft) !important;
   border-bottom-color: var(--gh-sidebar-divider) !important;
   border-radius: 12px !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 10px -20px rgba(122, 79, 73, 0.08) !important;
 }
 
 .theme-light .workspace-split.mod-left-split .nav-folder-title-content,
@@ -1018,14 +1018,14 @@ a.tag,
 .theme-light .workspace-split.mod-right-split .tag-pane-tag:hover {
   background: var(--gh-sidebar-hover) !important;
   border-color: rgba(229, 232, 236, 0.92) !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 10px -18px rgba(122, 79, 73, 0.10) !important;
 }
 
 .theme-light .workspace-split.mod-left-split .nav-folder-title:hover,
 .theme-light .workspace-split.mod-right-split .nav-folder-title:hover {
   background: var(--gh-sidebar-folder-hover) !important;
   border-color: rgba(229, 232, 236, 0.94) !important;
-  box-shadow: none !important;
+  box-shadow: 0 6px 12px -18px rgba(122, 79, 73, 0.10) !important;
 }
 
 .theme-light .workspace-split.mod-left-split .nav-file-title.is-active,
@@ -1036,7 +1036,7 @@ a.tag,
   color: var(--gh-sidebar-text) !important;
   font-weight: 590;
   border-color: rgba(205, 38, 35, 0.08) !important;
-  box-shadow: inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  box-shadow: 0 4px 12px -18px rgba(122, 79, 73, 0.11), inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
 }
 
 .theme-light .workspace-split.mod-left-split .nav-file-title.is-active .nav-file-title-content,
