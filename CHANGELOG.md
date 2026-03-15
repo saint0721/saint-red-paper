@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.2.6 - 2026-03-15
+
+- Replaced the README gallery with the final `main-light` and `main-dark` workspace captures so the public theme page shows only the two canonical desktop previews.
+- Refined Dataview tables so light and dark mode share the same rounded surface treatment without stray gradient bands or mismatched header cells.
+- Added a dedicated Markdown table styling layer with a cleaner paper-table presentation and a unified header row tone.
+- Polished the optional `Agent Client` surface so the usage chip can sit back on the left edge without fighting the selector controls.
+
 ## 0.2.5 - 2026-03-15
 
 - Added the actual dark main workspace capture to the README preview grid.
