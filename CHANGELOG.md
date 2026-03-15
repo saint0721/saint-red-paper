@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.4 - 2026-03-15
+
+- Replaced the README previews with named actual desktop captures from the same real workspace instead of mixed mockup-style report shots.
+- Simplified the README gallery to a hero plus light/dark workspace pair.
+- Tightened the light-mode palette so it feels closer in weight and contrast to the dark presentation while keeping light as the primary identity.
+
 ## 0.2.3 - 2026-03-15
 
 - Replaced the report-style preview assets with actual captures from a real experiment note so the README visuals lean on existing Obsidian content instead of staged mockup-like surfaces.

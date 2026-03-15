@@ -6,11 +6,11 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 
 ## Preview
 
-| Technical workspace | Reading surface | Dark mode |
-| --- | --- | --- |
-| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
+| Light workspace | Dark workspace |
+| --- | --- |
+| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
 
-The preview assets above are real captures from live Obsidian notes and panels. The technical workspace image is a sidebar-free crop from an actual experiment note so the reader's eye stays on the report surface, technical text, and result tables instead of the app chrome. The dark mode preview uses the same note structure with a deeper paper-black surface and muted red emphasis.
+The preview assets above are real captures from live Obsidian notes and panels. The hero image shows the full working setup with graph view and `Agent Client`, while the preview pair below keeps the focus on the same actual note in light and dark mode.
 
 ## Community Theme Metadata
 
@@ -68,7 +68,7 @@ The theme works without extra plugins, but these companion plugins are recommend
 
 - `Style Settings` for adjusting exposed theme variables from the UI
 - `Dataview` if you want result tables like the ones shown in the demo captures
-- `Agent Client` if you want the matching chat workflow shown in the right-dock previews
+- `Agent Client` if you want the matching chat workflow shown in the hero preview
 
 ### Optional plugin-specific styling
 
@@ -132,8 +132,7 @@ If you plan to share the theme publicly, verify:
 - `assets/saint-red-paper-hero.png`: Main live workspace capture
 - `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
-- `assets/saint-red-paper-workspace.png`: Sidebar-free technical report workspace preview
-- `assets/saint-red-paper-reading.png`: Live light-mode reading surface preview
+- `assets/saint-red-paper-workspace.png`: Live light-mode workspace preview
 - `assets/saint-red-paper-dark.png`: Live dark-mode reading preview
 - `CHANGELOG.md`: Release notes
 
