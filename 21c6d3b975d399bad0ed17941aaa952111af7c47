@@ -1,0 +1,15 @@
+memento_version: 1
+timestamp: 2026-03-15T16:55:04+0900
+repo: /Users/saintkim/saint-red-paper
+branch: main
+commit: 21c6d3b975d399bad0ed17941aaa952111af7c47
+session_file: /Users/saintkim/.codex/sessions/2026/03/15/rollout-2026-03-15T14-30-38-019ceff9-98ff-79e0-b1cc-e105c2fe5359.jsonl
+session_id: rollout-2026-03-15T14-30-38-019ceff9-98ff-79e0-b1cc-e105c2fe5359
+turn_id: 019cf077-b5a9-7d91-b4c6-dd7cae7a0cd5
+summary: Prepare community theme metadata and release files
+files:
+- CHANGELOG.md
+- README.md
+- assets/saint-red-paper-community.png
+- manifest.json
+- versions.json
