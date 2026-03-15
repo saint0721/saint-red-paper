@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Refined the optional `Agent Client` control styling so the composer, selectors, usage chip, and send button sit closer to the Saint Red Paper visual language.
+- Clarified in the README that plugin-specific support is styling-only and does not bundle plugin functionality.
+
 ## 0.2.0 - 2026-03-13
 
 - Prepared the theme for GitHub distribution.
