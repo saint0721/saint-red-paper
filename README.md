@@ -2,13 +2,21 @@
 
 Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, and long-form technical writing. It keeps light mode as the primary visual identity, but now also includes a matching dark mode so the same note structures remain usable when the workspace switches to dark.
 
+<div align="center">
+
+<a href="https://github.com/obsidianmd/obsidian-releases/pull/11051">Community Theme PR</a> · <a href="https://github.com/saint0721/saint-red-paper/stargazers">Star on GitHub</a> · <a href="https://github.com/saint0721/saint-red-paper/issues">Issues</a>
+
 [![Obsidian Community Theme PR](https://img.shields.io/badge/Obsidian%20Community-PR%20open-f28c28)](https://github.com/obsidianmd/obsidian-releases/pull/11051)
-[![GitHub stars](https://img.shields.io/github/stars/saint0721/saint-red-paper?style=flat)](https://github.com/saint0721/saint-red-paper/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/saint0721/saint-red-paper?style=social)](https://github.com/saint0721/saint-red-paper/stargazers)
+
+<strong>If Saint Red Paper fits your workflow, please star the repo.</strong>
+
+</div>
 
 ![Saint Red Paper light workspace](assets/main-light.png)
 ![Saint Red Paper dark workspace](assets/main-dark.png)
 
-Saint Red Paper is currently submitted to the official Obsidian community theme list. If it fits your workflow, consider starring the repo and sharing feedback or screenshots in [Issues](https://github.com/saint0721/saint-red-paper/issues).
+Saint Red Paper is currently submitted to the official Obsidian community theme list. Feedback, bug reports, and workspace screenshots are always welcome in [Issues](https://github.com/saint0721/saint-red-paper/issues).
 
 ## Community Theme Metadata
 
