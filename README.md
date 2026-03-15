@@ -10,7 +10,7 @@ Saint Red Paper is a paper-white Obsidian theme for research notes, lab logs, an
 | --- | --- |
 | ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) |
 
-The preview assets above are real captures from the live `Theme_Saint_Red_Paper_Demo.md` note inside Obsidian. The workspace image shows the live Dataview treatment and the reading image keeps the note surface close to how the theme feels during longer writing sessions.
+The preview assets above are real captures from the live `Theme_Saint_Red_Paper_Demo.md` note inside Obsidian. The main workspace preview now shows the left sidebar, a live Dataview table in the note surface, a graph view in the upper-right dock, and an `Agent Client` panel in the lower-right dock so the screenshot reads like a real working setup instead of a staged mockup.
 
 ## What It Changes
 
@@ -104,9 +104,9 @@ If you plan to share the theme publicly, verify:
 
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
-- `assets/saint-red-paper-hero.png`: Main live workspace collage
+- `assets/saint-red-paper-hero.png`: Main live workspace capture
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
-- `assets/saint-red-paper-workspace.png`: Live Dataview-focused workspace preview
+- `assets/saint-red-paper-workspace.png`: Live workspace preview with Dataview, graph, and Agent Client
 - `assets/saint-red-paper-reading.png`: Live reading surface preview
 - `CHANGELOG.md`: Release notes
 
