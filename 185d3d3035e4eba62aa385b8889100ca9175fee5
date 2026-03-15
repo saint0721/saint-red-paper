@@ -1,0 +1,13 @@
+memento_version: 1
+timestamp: 2026-03-15T22:22:25+0900
+repo: /Users/saintkim/Library/CloudStorage/GoogleDrive-saintkim0721@gmail.com/내 드라이브/Workspace/01. Project/saint-red-paper
+branch: main
+commit: 185d3d3035e4eba62aa385b8889100ca9175fee5
+session_file: /Users/saintkim/.codex/sessions/2026/03/15/rollout-2026-03-15T21-06-30-019cf164-07fa-76b0-b1ba-65c76b22e38c.jsonl
+session_id: rollout-2026-03-15T21-06-30-019cf164-07fa-76b0-b1ba-65c76b22e38c
+turn_id: 019cf1a6-398b-7a23-8ef0-60c095a07f8a
+summary: Prepare 0.2.6 community release
+files:
+- CHANGELOG.md
+- manifest.json
+- versions.json
