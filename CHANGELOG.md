@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.2.5 - 2026-03-15
+
+- Added the actual dark main workspace capture to the README preview grid.
+- Removed legacy preview assets that were no longer used by the repository.
+
 ## 0.2.4 - 2026-03-15
 
 - Replaced the README previews with named actual desktop captures from the same real workspace instead of mixed mockup-style report shots.

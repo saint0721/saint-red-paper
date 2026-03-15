@@ -3,14 +3,19 @@
 Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, and long-form technical writing. It keeps light mode as the primary visual identity, but now also includes a matching dark mode so the same note structures remain usable when the workspace switches to dark.
 
 ![Saint Red Paper hero preview](assets/saint-red-paper-hero.png)
+![Saint Red Paper dark hero preview](assets/saint-red-paper-hero-dark.png)
 
 ## Preview
+
+| Main workspace | Main workspace dark |
+| --- | --- |
+| ![Saint Red Paper hero preview](assets/saint-red-paper-hero.png) | ![Saint Red Paper dark hero preview](assets/saint-red-paper-hero-dark.png) |
 
 | Light workspace | Dark workspace |
 | --- | --- |
 | ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
 
-The preview assets above are real captures from live Obsidian notes and panels. The hero image shows the full working setup with graph view and `Agent Client`, while the preview pair below keeps the focus on the same actual note in light and dark mode.
+The preview assets above are real captures from live Obsidian notes and panels. The first row shows the main light and dark workspace setup with the same graph and `Agent Client` arrangement. The second row keeps the focus on the actual note surface in light and dark mode.
 
 ## Community Theme Metadata
 
@@ -130,8 +135,8 @@ If you plan to share the theme publicly, verify:
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
 - `assets/saint-red-paper-hero.png`: Main live workspace capture
+- `assets/saint-red-paper-hero-dark.png`: Main live dark workspace capture
 - `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
-- `assets/saint-red-paper-cover.svg`: Repo preview graphic
 - `assets/saint-red-paper-workspace.png`: Live light-mode workspace preview
 - `assets/saint-red-paper-dark.png`: Live dark-mode reading preview
 - `CHANGELOG.md`: Release notes
