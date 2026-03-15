@@ -2,20 +2,8 @@
 
 Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, and long-form technical writing. It keeps light mode as the primary visual identity, but now also includes a matching dark mode so the same note structures remain usable when the workspace switches to dark.
 
-![Saint Red Paper hero preview](assets/saint-red-paper-hero.png)
-![Saint Red Paper dark hero preview](assets/saint-red-paper-hero-dark.png)
-
-## Preview
-
-| Main workspace | Main workspace dark |
-| --- | --- |
-| ![Saint Red Paper hero preview](assets/saint-red-paper-hero.png) | ![Saint Red Paper dark hero preview](assets/saint-red-paper-hero-dark.png) |
-
-| Light workspace | Dark workspace |
-| --- | --- |
-| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
-
-The preview assets above are real captures from live Obsidian notes and panels. The first row shows the main light and dark workspace setup with the same graph and `Agent Client` arrangement. The second row keeps the focus on the actual note surface in light and dark mode.
+![Saint Red Paper light workspace](assets/main-light.png)
+![Saint Red Paper dark workspace](assets/main-dark.png)
 
 ## Community Theme Metadata
 
@@ -69,11 +57,11 @@ Then move or symlink the folder into `.obsidian/themes/Saint Red Paper/`.
 
 ### Optional plugin
 
-The theme works without extra plugins, but these companion plugins are recommended if you want the same setup shown in the previews:
+The theme works without extra plugins, but these companion plugins are recommended if you want a setup close to the light and dark workspace captures above:
 
 - `Style Settings` for adjusting exposed theme variables from the UI
 - `Dataview` if you want result tables like the ones shown in the demo captures
-- `Agent Client` if you want the matching chat workflow shown in the hero preview
+- `Agent Client` if you want the matching chat workflow shown in the workspace captures
 
 ### Optional plugin-specific styling
 
@@ -134,8 +122,8 @@ If you plan to share the theme publicly, verify:
 
 - `theme.css`: Theme source
 - `manifest.json`: Obsidian theme manifest
-- `assets/saint-red-paper-hero.png`: Main live workspace capture
-- `assets/saint-red-paper-hero-dark.png`: Main live dark workspace capture
+- `assets/main-light.png`: Main live light workspace capture
+- `assets/main-dark.png`: Main live dark workspace capture
 - `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
 - `assets/saint-red-paper-workspace.png`: Live light-mode workspace preview
 - `assets/saint-red-paper-dark.png`: Live dark-mode reading preview
