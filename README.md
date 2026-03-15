@@ -10,7 +10,7 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 | --- | --- | --- |
 | ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
 
-The preview assets above are real captures from live demo notes inside Obsidian. The technical workspace image is intentionally sidebar-free so the reader's eye stays on the report surface, figures, and tables instead of the app chrome. The dark mode preview uses the same theme language with a deeper paper-black surface and muted red emphasis.
+The preview assets above are real captures from live Obsidian notes and panels. The technical workspace image is a sidebar-free crop from an actual experiment note so the reader's eye stays on the report surface, technical text, and result tables instead of the app chrome. The dark mode preview uses the same note structure with a deeper paper-black surface and muted red emphasis.
 
 ## Community Theme Metadata
 

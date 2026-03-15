@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.2.3 - 2026-03-15
+
+- Replaced the report-style preview assets with actual captures from a real experiment note so the README visuals lean on existing Obsidian content instead of staged mockup-like surfaces.
+- Refreshed the dark preview with the same real note structure and kept the community submission screenshot as a smaller actual UI capture.
+
 ## 0.2.2 - 2026-03-15
 
 - Added a true light-first but dark-capable pass so Saint Red Paper no longer relies on token-only dark compatibility.
