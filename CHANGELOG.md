@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.2.2 - 2026-03-15
+
+- Added a true light-first but dark-capable pass so Saint Red Paper no longer relies on token-only dark compatibility.
+- Restyled dark surfaces for markdown reading, Dataview tables, inline code, blockquotes, sidebars, and graph view with a restrained red-paper palette.
+- Rebuilt the README previews around a sidebar-free technical report workspace for light mode and added a dedicated dark-mode preview image.
+- Shrunk the community submission screenshot to a submission-friendly `512x288` size.
+
 ## 0.2.1 - 2026-03-15
 
 - Rebuilt the main preview assets around a real Obsidian workspace layout with the left sidebar open, a live Dataview table in the note surface, a graph view in the upper-right dock, and `Agent Client` in the lower-right dock.

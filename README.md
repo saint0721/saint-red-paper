@@ -1,16 +1,16 @@
 # Saint Red Paper
 
-Saint Red Paper is a paper-white Obsidian theme for research notes, lab logs, and long-form technical writing. It stays bright and quiet by default, uses red only where structure needs emphasis, and folds the main sidebar, callout, tab, typography, Dataview, and optional plugin refinements into one restrained visual language.
+Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, and long-form technical writing. It keeps light mode as the primary visual identity, but now also includes a matching dark mode so the same note structures remain usable when the workspace switches to dark.
 
 ![Saint Red Paper hero preview](assets/saint-red-paper-hero.png)
 
 ## Preview
 
-| Workspace | Reading surface |
-| --- | --- |
-| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) |
+| Technical workspace | Reading surface | Dark mode |
+| --- | --- | --- |
+| ![Workspace preview](assets/saint-red-paper-workspace.png) | ![Reading preview](assets/saint-red-paper-reading.png) | ![Dark preview](assets/saint-red-paper-dark.png) |
 
-The preview assets above are real captures from the live `Theme_Saint_Red_Paper_Demo.md` note inside Obsidian. The main workspace preview now shows the left sidebar, a live Dataview table in the note surface, a graph view in the upper-right dock, and an `Agent Client` panel in the lower-right dock so the screenshot reads like a real working setup instead of a staged mockup.
+The preview assets above are real captures from live demo notes inside Obsidian. The technical workspace image is intentionally sidebar-free so the reader's eye stays on the report surface, figures, and tables instead of the app chrome. The dark mode preview uses the same theme language with a deeper paper-black surface and muted red emphasis.
 
 ## Community Theme Metadata
 
@@ -22,13 +22,13 @@ If you want to submit Saint Red Paper to the official Obsidian community theme l
   "author": "saintkim",
   "repo": "saint0721/saint-red-paper",
   "screenshot": "assets/saint-red-paper-community.png",
-  "modes": ["light"]
+  "modes": ["dark", "light"]
 }
 ```
 
 Notes:
 
-- `modes` is currently declared as `["light"]` because Saint Red Paper is intentionally tuned and documented as a light-mode-first theme.
+- `modes` is declared as `["dark", "light"]`, but Saint Red Paper is still intentionally positioned as a light-first theme.
 - `publish` is omitted for now because Obsidian Publish support has not been explicitly validated yet.
 - The community screenshot asset is a real 16:9 capture prepared for submission review.
 
@@ -38,6 +38,7 @@ Notes:
 - Tunes headings, spacing, blockquotes, callouts, and inline code for reading-heavy notes
 - Gives sidebars, root tabs, links, tags, and notices a restrained red-paper language
 - Adds a paper-like treatment for Dataview result tables so they feel closer to notes than widgets
+- Extends the same visual language into a matching dark mode instead of leaving dark as a token-only fallback
 - Adds a compact optional styling layer for `Agent Client` controls when that plugin is installed
 - Includes built-in `Style Settings` hooks for width, rules, sidebar accents, links, tags, and table density
 - Still behaves predictably even if `Style Settings` is not installed
@@ -63,11 +64,15 @@ Then move or symlink the folder into `.obsidian/themes/Saint Red Paper/`.
 
 ### Optional plugin
 
-The theme works without extra plugins, but `Style Settings` is recommended if you want to adjust the exposed theme variables from the UI instead of editing CSS.
+The theme works without extra plugins, but these companion plugins are recommended if you want the same setup shown in the previews:
+
+- `Style Settings` for adjusting exposed theme variables from the UI
+- `Dataview` if you want result tables like the ones shown in the demo captures
+- `Agent Client` if you want the matching chat workflow shown in the right-dock previews
 
 ### Optional plugin-specific styling
 
-Saint Red Paper can also style some third-party plugin surfaces if they already exist in the user's vault. For example, the current theme includes a compact control treatment for `Agent Client` so its chat composer feels closer to the rest of the paper-like interface.
+Saint Red Paper can also style some third-party plugin surfaces if they already exist in the user's vault. In practice, `Agent Client` is the main companion plugin currently styled by the theme, and the screenshots intentionally show that integration because it fits the research-note workflow the theme is built around.
 
 Important:
 
@@ -127,8 +132,9 @@ If you plan to share the theme publicly, verify:
 - `assets/saint-red-paper-hero.png`: Main live workspace capture
 - `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
 - `assets/saint-red-paper-cover.svg`: Repo preview graphic
-- `assets/saint-red-paper-workspace.png`: Live workspace preview with Dataview, graph, and Agent Client
-- `assets/saint-red-paper-reading.png`: Live reading surface preview
+- `assets/saint-red-paper-workspace.png`: Sidebar-free technical report workspace preview
+- `assets/saint-red-paper-reading.png`: Live light-mode reading surface preview
+- `assets/saint-red-paper-dark.png`: Live dark-mode reading preview
 - `CHANGELOG.md`: Release notes
 
 ## Links
