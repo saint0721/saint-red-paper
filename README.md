@@ -46,6 +46,7 @@ Notes:
 - Adds a paper-like treatment for Dataview result tables so they feel closer to notes than widgets
 - Extends the same visual language into a matching dark mode instead of leaving dark as a token-only fallback
 - Adds a compact optional styling layer for `Agent Client` controls when that plugin is installed
+- Fits well with `make.md`'s `Navigator` panel if you want the workspace captures to feel closer to the author's setup
 - Includes built-in `Style Settings` hooks for width, rules, sidebar accents, links, tags, and table density
 - Still behaves predictably even if `Style Settings` is not installed
 - Ships as a compact theme package with `theme.css` and `manifest.json`
@@ -75,15 +76,17 @@ The theme works without extra plugins, but these companion plugins are recommend
 - `Style Settings` for adjusting exposed theme variables from the UI
 - `Dataview` if you want result tables like the ones shown in the demo captures
 - `Agent Client` if you want the matching chat workflow shown in the workspace captures
+- `make.md` if you want the `Navigator` panel shown in the author's workspace layout
 
 ### Optional plugin-specific styling
 
-Saint Red Paper can also style some third-party plugin surfaces if they already exist in the user's vault. In practice, `Agent Client` is the main companion plugin currently styled by the theme, and the screenshots intentionally show that integration because it fits the research-note workflow the theme is built around.
+Saint Red Paper can also style some third-party plugin surfaces if they already exist in the user's vault. In practice, `Agent Client` is the main companion plugin currently styled by the theme, and the screenshots intentionally show that integration because it fits the research-note workflow the theme is built around. Some workspace captures may also reflect layout influence from `make.md`, especially its `Navigator` view, even though the theme does not bundle that plugin.
 
 Important:
 
 - The theme does **not** bundle `Agent Client` or any other plugin functionality.
 - Users still need to install those plugins separately.
+- If you want the workspace screenshots to look closer to the author's vault, install the companion plugins separately, including `make.md` for `Navigator`.
 - What the theme can provide is visual integration, not plugin features.
 
 ## Best Fit
