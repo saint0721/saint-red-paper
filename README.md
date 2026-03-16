@@ -27,7 +27,7 @@ If you want to submit Saint Red Paper to the official Obsidian community theme l
   "name": "Saint Red Paper",
   "author": "saintkim",
   "repo": "saint0721/saint-red-paper",
-  "screenshot": "assets/saint-red-paper-community.png",
+  "screenshot": "assets/main-light.png",
   "modes": ["dark", "light"]
 }
 ```
@@ -36,7 +36,7 @@ Notes:
 
 - `modes` is declared as `["dark", "light"]`, but Saint Red Paper is still intentionally positioned as a light-first theme.
 - `publish` is omitted for now because Obsidian Publish support has not been explicitly validated yet.
-- The community screenshot asset is a real 16:9 capture prepared for submission review.
+- The screenshot field above now points to the main light workspace capture kept in this repository.
 
 ## What It Changes
 
@@ -140,9 +140,6 @@ If you plan to share the theme publicly, verify:
 - `manifest.json`: Obsidian theme manifest
 - `assets/main-light.png`: Main live light workspace capture
 - `assets/main-dark.png`: Main live dark workspace capture
-- `assets/saint-red-paper-community.png`: 16:9 community submission screenshot
-- `assets/saint-red-paper-workspace.png`: Live light-mode workspace preview
-- `assets/saint-red-paper-dark.png`: Live dark-mode reading preview
 - `CHANGELOG.md`: Release notes
 
 ## Links
