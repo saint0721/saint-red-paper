@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Refined the optional `Agent Client` surface for research-oriented use, including stronger light-mode inline code accents, a cleaner empty-state treatment, a layered composer well, and a softer diagonal background glow behind the conversation area.
+
 ## 0.2.6 - 2026-03-15
 
 - Replaced the README gallery with the final `main-light` and `main-dark` workspace captures so the public theme page shows only the two canonical desktop previews.
