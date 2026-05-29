@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.7 - 2026-05-29
+
+- Refined Markdown and Dataview tables around a cleaner paper-like layout: no outer red box, a stronger red header rule, subtle body row rules, and less rounded framing.
+- Added optional red table dividers for Markdown tables. Put `<hr>` in the first cell of a blank row to render a red divider across the table.
+- Simplified inline code in light mode so backtick text uses the same red tone as table headers without a filled chip background or border.
+- Simplified Properties multi-value pills for topics, tags, and aliases by removing the rounded capsule background and using normal text color for the values.
 - Refined the optional `Agent Client` surface for research-oriented use, including stronger light-mode inline code accents, a cleaner empty-state treatment, a layered composer well, and a softer diagonal background glow behind the conversation area.
 
 ## 0.2.6 - 2026-03-15

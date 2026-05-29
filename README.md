@@ -43,7 +43,8 @@ Notes:
 - Keeps the main canvas close to white paper instead of tinting the whole workspace
 - Tunes headings, spacing, blockquotes, callouts, and inline code for reading-heavy notes
 - Gives sidebars, root tabs, links, tags, and notices a restrained red-paper language
-- Adds a paper-like treatment for Dataview result tables so they feel closer to notes than widgets
+- Adds a paper-like treatment for Markdown and Dataview tables so they feel closer to notes than widgets
+- Supports optional red table dividers with a simple `<hr>` marker row
 - Extends the same visual language into a matching dark mode instead of leaving dark as a token-only fallback
 - Adds a compact optional styling layer for `Agent Client` controls when that plugin is installed
 - Fits well with `make.md`'s `Navigator` panel if you want the workspace captures to feel closer to the author's setup
@@ -107,6 +108,20 @@ It is a weaker fit for dashboard-heavy, card-heavy, or heavily gamified workspac
 - Interface mode: Light
 - Accent color: `#cd2623` if you want the OS-level accent to sit close to the theme palette
 - Snippets: Disable older overlapping table/sidebar snippets once this theme is enabled
+
+## Markdown table dividers
+
+Saint Red Paper supports an optional red divider row inside Markdown tables. Add a blank table row where you want the divider, then put `<hr>` in the first cell:
+
+```md
+| Project | Status | Updated |
+| ------- | ------ | ------- |
+| A       | Done   | Today   |
+| <hr>    |        |         |
+| B       | Todo   | Tomorrow |
+```
+
+The theme hides the `<hr>` text and renders that row as a red horizontal divider across the table. Plain empty rows stay plain; the divider appears only where the `<hr>` marker is used.
 
 ## Exposed Style Settings controls
 
