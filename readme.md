@@ -4,9 +4,9 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 
 <div align="center">
 
-<a href="https://github.com/obsidianmd/obsidian-releases/pull/11051">Community Theme PR</a> · <a href="https://github.com/saint0721/saint-red-paper/stargazers">Star on GitHub</a> · <a href="https://github.com/saint0721/saint-red-paper/issues">Issues</a>
+<a href="https://community.obsidian.md/themes/saint-red-paper">Obsidian Community Theme</a> · <a href="https://github.com/saint0721/saint-red-paper/stargazers">Star on GitHub</a> · <a href="https://github.com/saint0721/saint-red-paper/issues">Issues</a>
 
-[![Obsidian Community Theme PR](https://img.shields.io/badge/Obsidian%20Community-PR%20open-f28c28)](https://github.com/obsidianmd/obsidian-releases/pull/11051)
+[![Obsidian Community Theme](https://img.shields.io/badge/Obsidian%20Community-Live-4caf50)](https://community.obsidian.md/themes/saint-red-paper)
 [![GitHub stars](https://img.shields.io/github/stars/saint0721/saint-red-paper?style=social)](https://github.com/saint0721/saint-red-paper/stargazers)
 
 <strong>If Saint Red Paper fits your workflow, please star the repo.</strong>
@@ -16,27 +16,7 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 ![Saint Red Paper light workspace](assets/main-light.png)
 ![Saint Red Paper dark workspace](assets/main-dark.png)
 
-Saint Red Paper is currently submitted to the official Obsidian community theme list. Feedback, bug reports, and workspace screenshots are always welcome in [Issues](https://github.com/saint0721/saint-red-paper/issues).
-
-## Community Theme Metadata
-
-If you want to submit Saint Red Paper to the official Obsidian community theme list, the current ready-to-paste metadata is:
-
-```json
-{
-  "name": "Saint Red Paper",
-  "author": "saintkim",
-  "repo": "saint0721/saint-red-paper",
-  "screenshot": "assets/main-light.png",
-  "modes": ["dark", "light"]
-}
-```
-
-Notes:
-
-- `modes` is declared as `["dark", "light"]`, but Saint Red Paper is still intentionally positioned as a light-first theme.
-- `publish` is omitted for now because Obsidian Publish support has not been explicitly validated yet.
-- The screenshot field above now points to the main light workspace capture kept in this repository.
+Saint Red Paper is available in the official Obsidian Community directory. Feedback, bug reports, and workspace screenshots are always welcome in [Issues](https://github.com/saint0721/saint-red-paper/issues).
 
 ## What It Changes
 
