@@ -14,7 +14,6 @@ Saint Red Paper is a light-first Obsidian theme for research notes, lab logs, an
 </div>
 
 ![Saint Red Paper light workspace](assets/main-light.png)
-![Saint Red Paper dark workspace](assets/main-dark.png)
 
 Saint Red Paper is available in the official Obsidian Community directory. Feedback, bug reports, and workspace screenshots are always welcome in [Issues](https://github.com/saint0721/saint-red-paper/issues).
 
@@ -88,6 +87,10 @@ It is a weaker fit for dashboard-heavy, card-heavy, or heavily gamified workspac
 - Interface mode: Light
 - Accent color: `#cd2623` if you want the OS-level accent to sit close to the theme palette
 - Snippets: Disable older overlapping table/sidebar snippets once this theme is enabled
+
+## Dark mode preview
+
+![Saint Red Paper dark workspace](assets/main-dark.png)
 
 ## Markdown table dividers
 
