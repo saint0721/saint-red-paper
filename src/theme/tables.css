@@ -1,0 +1,227 @@
+/* Markdown table styling */
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .table-wrapper,
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  table:not(.table-view-table):not(.table-editor) {
+  margin: 1.05rem 0;
+  border: 0;
+  border-radius: var(--srp-markdown-table-radius);
+  background: var(--srp-markdown-table-surface);
+  box-shadow: var(--srp-markdown-table-shadow);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .table-wrapper {
+  overflow: visible;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) :is(th, td) {
+  border-right: 0 !important;
+  border-left: 0 !important;
+  vertical-align: top;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) thead tr {
+  background-color: transparent !important;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) th {
+  background: none;
+  background-color: transparent !important;
+  color: var(--srp-markdown-table-header-text);
+  border-top: 0;
+  border-bottom: 2px solid var(--srp-markdown-table-header-rule);
+  padding: calc(var(--srp-table-padding-y) + 0.32em) 0.9rem;
+  font-size: inherit;
+  font-weight: 720;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) td {
+  border-color: transparent !important;
+  border-top: 1px solid color-mix(in srgb, var(--srp-markdown-table-rule) 86%, transparent) !important;
+  padding: calc(var(--srp-table-padding-y) + 0.12em) 0.9rem;
+  background: transparent;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody tr,
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody td {
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody tr:first-child td {
+  border-top: 0;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody tr:hover td {
+  background: transparent;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody tr
+  :is(td:empty, td:has(> br:only-child)) {
+  padding-top: var(--srp-markdown-table-empty-row-padding-y);
+  padding-bottom: var(--srp-markdown-table-empty-row-padding-y);
+  line-height: 0.8;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) tbody tr:has(:is(hr, .srp-table-divider)) td {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 1px),
+      color-mix(in srgb, var(--srp-markdown-table-header-rule) 78%, transparent) calc(50% - 1px),
+      color-mix(in srgb, var(--srp-markdown-table-header-rule) 78%, transparent) calc(50% + 1px),
+      transparent calc(50% + 1px)
+    ) !important;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(table:not(.table-view-table), .table-editor) :is(hr, .srp-table-divider) {
+  display: none !important;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .cm-table-widget :is(.table-col-drag-handle, .table-row-drag-handle),
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .cm-table-widget :is(.table-row-btn, .table-col-btn) {
+  color: var(--text-faint);
+  opacity: 0.34;
+  transition: opacity 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .cm-table-widget :is(.table-col-drag-handle, .table-row-drag-handle):hover,
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  .cm-table-widget :is(.table-row-btn, .table-col-btn):hover {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Dataview showcase styling */
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.block-language-dataview, .block-language-dataviewjs) {
+  border-radius: var(--srp-dataview-radius);
+  overflow-y: hidden;
+  padding: 0;
+  background: var(--srp-dataview-surface);
+  border: 1px solid var(--srp-dataview-border);
+  box-shadow: var(--srp-dataview-shadow);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.block-language-dataview, .block-language-dataviewjs) > .dataview {
+  overflow: hidden;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-table, table.dataview) {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0;
+  border-radius: var(--srp-dataview-radius);
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-table, table.dataview) > thead,
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-table, table.dataview) > tbody {
+  background: transparent;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-tr-header, table.dataview thead tr) {
+  background-color: var(--srp-dataview-header-surface) !important;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-th, table.dataview th) {
+  padding: 0.58rem 0.9rem;
+  background: none;
+  background-color: var(--srp-dataview-header-surface) !important;
+  border-bottom: 2px solid var(--srp-dataview-header-border);
+  color: var(--srp-dataview-header-text);
+  font-size: inherit;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-th, table.dataview th) .dataview.small-text {
+  color: var(--srp-link-custom, var(--srp-link));
+  font-weight: 700;
+  margin-left: 0.4rem;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-td, table.dataview td) {
+  padding: 0.56rem 0.9rem;
+  border-color: transparent !important;
+  vertical-align: top;
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-tbody tr, table.dataview tbody tr):hover {
+  background: var(--srp-dataview-row-hover);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-th, table.dataview th):first-child {
+  border-top-left-radius: var(--srp-dataview-radius-inner);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-th, table.dataview th):last-child {
+  border-top-right-radius: var(--srp-dataview-radius-inner);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-tbody tr:last-child td:first-child, table.dataview tbody tr:last-child td:first-child) {
+  border-bottom-left-radius: var(--srp-dataview-radius-inner);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-tbody tr:last-child td:last-child, table.dataview tbody tr:last-child td:last-child) {
+  border-bottom-right-radius: var(--srp-dataview-radius-inner);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-table, table.dataview) a.internal-link {
+  color: var(--text-normal);
+}
+
+:is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
+  :where(.table-view-table, table.dataview) a.internal-link:hover {
+  color: var(--srp-link-custom, var(--srp-link));
+}
+

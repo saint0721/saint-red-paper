@@ -1,0 +1,42 @@
+/* Notices / toast-style alerts */
+
+.theme-light .notice {
+  position: relative;
+  background: #ffffff !important;
+  color: var(--text-normal) !important;
+  border: 1px solid #dfe3e8 !important;
+  border-radius: 6px !important;
+  box-shadow:
+    0 10px 24px -18px rgba(36, 41, 47, 0.28),
+    0 18px 36px -30px rgba(36, 41, 47, 0.18) !important;
+}
+
+.theme-light .notice::after {
+  content: "" !important;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2px;
+  background: #cd2623 !important;
+  border-radius: 999px;
+}
+
+.theme-light .notice,
+.theme-light .notice * {
+  color: var(--text-normal) !important;
+}
+
+/* Search */
+.search-result .search-result-file-title {
+  cursor: pointer;
+}
+
+.search-result .collapse-icon {
+  cursor: var(--cursor);
+}
+
+.search-result:not(.is-collapsed) .search-result-file-title {
+  color: var(--blue);
+}
+

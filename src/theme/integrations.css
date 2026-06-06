@@ -1,0 +1,247 @@
+/* Agent Client panel refinement
+ * Compact, full-hit controls tuned for Saint Red Paper.
+ */
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-view-header {
+  padding: 14px 16px;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-view-messages {
+  position: relative;
+  overflow: hidden;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-view-messages::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--srp-agent-empty-glow);
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-view-messages::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(205, 38, 35, 0), rgba(205, 38, 35, 0.24), rgba(205, 38, 35, 0));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-view-header-title {
+  display: inline-block;
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  background: var(--srp-agent-title-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-empty-state {
+  position: relative;
+  max-width: min(360px, calc(100% - 32px));
+  margin: 28px auto;
+  padding: 18px 20px;
+  border: 1px solid var(--srp-agent-empty-border);
+  border-radius: 18px;
+  background: var(--srp-agent-empty-surface);
+  box-shadow:
+    0 10px 22px -22px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.55;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-empty-state {
+  color: var(--text-muted);
+  -webkit-text-fill-color: currentColor;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-box {
+  border-radius: var(--srp-agent-composer-radius);
+  border-color: var(--background-modifier-border);
+  box-shadow: none;
+}
+
+.theme-light .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-box {
+  background: var(--srp-agent-composer-surface);
+  box-shadow:
+    0 16px 30px -28px rgba(122, 79, 73, 0.16),
+    0 8px 18px -22px rgba(205, 38, 35, 0.10);
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-box:focus-within {
+  box-shadow: 0 0 0 1px var(--interactive-accent-hover);
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-auto-mention-inline {
+  padding: 6px 10px;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-textarea-wrapper {
+  margin: 0 8px 4px;
+  border: 1px solid var(--srp-agent-input-well-border);
+  border-radius: 16px;
+  background: var(--srp-agent-input-well);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-textarea,
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-hint-overlay {
+  padding: 12px 14px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-actions {
+  gap: 5px;
+  padding: 5px 9px 9px;
+  border-top: 1px solid color-mix(in srgb, var(--background-modifier-border) 74%, transparent);
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-options-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-usage-indicator {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 4px;
+  min-height: var(--srp-agent-control-height);
+  margin-right: auto;
+  padding: 0 7px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--srp-agent-control-radius);
+  background: var(--srp-agent-control-surface);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-usage-indicator::after {
+  content: " · " attr(aria-label);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0;
+  opacity: 0.92;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-usage-indicator:not([aria-label])::after,
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-usage-indicator[aria-label=""]::after {
+  content: none;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 0;
+  height: var(--srp-agent-control-height);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--srp-agent-control-radius);
+  background: var(--srp-agent-control-surface);
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector-mode {
+  width: 82px;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector-model {
+  width: 148px;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector-thought_level {
+  width: 88px;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector > div {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector::after {
+  content: "▾";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector:hover {
+  background: var(--srp-agent-control-surface-hover);
+  border-color: var(--background-modifier-border-hover);
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector:focus-within {
+  border-color: var(--interactive-accent-hover);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent-hover) 45%, transparent);
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector select.dropdown {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  padding: 0 var(--srp-agent-control-pad-right) 0 var(--srp-agent-control-pad-left) !important;
+  margin: 0 !important;
+  color: var(--text-normal) !important;
+  font-size: 11px !important;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  cursor: pointer !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector-icon {
+  display: none !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px !important;
+  background-color: var(--interactive-accent) !important;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button:hover:not(.agent-client-disabled) {
+  background-color: var(--interactive-accent-hover) !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-active,
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-sending,
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-inactive {
+  color: #ffffff !important;
+}
+
+:is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-attachment-preview-item {
+  border-radius: var(--srp-agent-control-radius);
+}

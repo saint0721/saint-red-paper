@@ -1,0 +1,134 @@
+/* @settings
+name: Saint Red Paper
+id: saint-red-paper
+settings:
+	-
+		id: srp-layout
+		title: Layout
+		type: heading
+		level: 1
+		collapsed: true
+	-
+		id: srp-note-width
+		title: Note width
+		type: variable-number-slider
+		default: 920
+		min: 760
+		max: 1280
+		step: 10
+		format: px
+	-
+		id: srp-body-width
+		title: Paragraph width
+		type: variable-number-slider
+		default: 68
+		min: 56
+		max: 86
+		step: 1
+		format: ch
+	-
+		id: srp-inline-title-rule-width
+		title: Inline title rule width
+		type: variable-number-slider
+		default: 82
+		min: 40
+		max: 140
+		step: 2
+		format: px
+	-
+		id: srp-h1-rule-width
+		title: H1 rule width
+		type: variable-number-slider
+		default: 74
+		min: 40
+		max: 140
+		step: 2
+		format: px
+	-
+		id: srp-sidebar
+		title: Sidebar
+		type: heading
+		level: 1
+		collapsed: true
+	-
+		id: gh-sidebar-accent-custom
+		title: Sidebar active accent
+		type: variable-color
+		format: hex
+		default: '#cd2623'
+		opacity: false
+	-
+		id: gh-sidebar-active-custom
+		title: Sidebar active background
+		type: variable-color
+		format: hex
+		default: '#fff7f5'
+		opacity: false
+	-
+		id: gh-sidebar-shadow-opacity
+		title: Sidebar edge shadow opacity
+		type: variable-number-slider
+		default: 0.14
+		min: 0
+		max: 0.3
+		step: 0.01
+	-
+		id: srp-links-tags
+		title: Links and Tags
+		type: heading
+		level: 1
+		collapsed: true
+	-
+		id: srp-link-custom
+		title: Link color
+		type: variable-color
+		format: hex
+		default: '#a12822'
+		opacity: false
+	-
+		id: srp-link-hover-custom
+		title: Link hover color
+		type: variable-color
+		format: hex
+		default: '#c63c35'
+		opacity: false
+	-
+		id: srp-tag-radius
+		title: Tag shape
+		type: variable-select
+		default: '999px'
+		allowEmpty: false
+		options:
+			-
+				label: Pill
+				value: '999px'
+			-
+				label: Rounded
+				value: '12px'
+			-
+				label: Square
+				value: '4px'
+	-
+		id: srp-tables
+		title: Tables
+		type: heading
+		level: 1
+		collapsed: true
+	-
+		id: srp-table-padding-y-custom
+		title: Table vertical padding
+		type: variable-number-slider
+		default: 0.30
+		min: 0.14
+		max: 0.60
+		step: 0.02
+		format: em
+	-
+		id: srp-table-outer-border-custom
+		title: Table outer border color
+		type: variable-color
+		format: hex
+		default: '#c74a43'
+	opacity: false
+*/
+

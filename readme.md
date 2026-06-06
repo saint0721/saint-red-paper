@@ -134,11 +134,21 @@ If you plan to share the theme publicly, verify:
 
 ## Included Files
 
-- `theme.css`: Theme source
+- `theme.css`: Built Obsidian theme file
+- `src/theme/`: Split CSS source files
+- `scripts/build-css.mjs`: Rebuilds `theme.css` from `src/theme/`
 - `manifest.json`: Obsidian theme manifest
 - `assets/main-light.png`: Main live light workspace capture
 - `assets/main-dark.png`: Main live dark workspace capture
 - `CHANGELOG.md`: Release notes
+
+## Development
+
+Edit the split source files in `src/theme/`, then rebuild the distributable theme file:
+
+```bash
+npm run build:css
+```
 
 ## Links
 
