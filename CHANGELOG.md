@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.2.8 - 2026-06-06
+
+- Refreshed the README for the new Obsidian Community directory flow and removed obsolete PR/submission wording.
+- Restored the canonical uppercase `README.md` filename for GitHub and community directory compatibility.
+- Addressed community theme review feedback around selector duplication, unsupported decoration properties, contrast, hex formatting, and optional integration selectors.
+- Removed the temporary package/build-script files so the repository remains a minimal Obsidian theme package.
+
 ## 0.2.7 - 2026-05-29
 
 - Refined Markdown and Dataview tables around a cleaner paper-like layout: no outer red box, a stronger red header rule, subtle body row rules, and less rounded framing.
