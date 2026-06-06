@@ -29,11 +29,17 @@ Saint Red Paper is available in the official Obsidian Community directory. Feedb
 - Fits well with `make.md`'s `Navigator` panel if you want the workspace captures to feel closer to the author's setup
 - Includes built-in `Style Settings` hooks for width, rules, sidebar accents, links, tags, and table density
 - Still behaves predictably even if `Style Settings` is not installed
-- Ships as a compact theme package with `theme.css` and `manifest.json`
+- Installs from the standard Obsidian theme files, `theme.css` and `manifest.json`, with split source files included for development
 
 ## Quick Install
 
 Requires Obsidian `1.1.9` or later.
+
+### Obsidian Community Themes
+
+1. Open `Settings -> Appearance -> Themes -> Manage`.
+2. Search for `Saint Red Paper`.
+3. Install and select the theme.
 
 ### Manual
 
@@ -49,24 +55,23 @@ git clone https://github.com/saint0721/saint-red-paper.git "Saint Red Paper"
 
 Then move or symlink the folder into `.obsidian/themes/Saint Red Paper/`.
 
-### Optional plugin
+### Optional plugins
 
-The theme works without extra plugins, but these companion plugins are recommended if you want a setup close to the light and dark workspace captures above:
+The theme works without extra plugins. These plugins are only recommended if you want a setup closer to the screenshots:
 
 - `Style Settings` for adjusting exposed theme variables from the UI
 - `Dataview` if you want result tables like the ones shown in the demo captures
-- `Agent Client` if you want the matching chat workflow shown in the workspace captures
-- `make.md` if you want the `Navigator` panel shown in the author's workspace layout
+- `Agent Client` if you want matching visual treatment for chat controls
+- `make.md` if you want the `Navigator` panel layout shown in the author's workspace
 
 ### Optional plugin-specific styling
 
-Saint Red Paper can also style some third-party plugin surfaces if they already exist in the user's vault. In practice, `Agent Client` is the main companion plugin currently styled by the theme, and the screenshots intentionally show that integration because it fits the research-note workflow the theme is built around. Some workspace captures may also reflect layout influence from `make.md`, especially its `Navigator` view, even though the theme does not bundle that plugin.
+Saint Red Paper can style a few third-party plugin surfaces when those plugins already exist in the user's vault. The theme does not bundle plugin functionality; it only provides visual integration where safe.
 
 Important:
 
 - The theme does **not** bundle `Agent Client` or any other plugin functionality.
 - Users still need to install those plugins separately.
-- If you want the workspace screenshots to look closer to the author's vault, install the companion plugins separately, including `make.md` for `Navigator`.
 - What the theme can provide is visual integration, not plugin features.
 
 ## Best Fit
@@ -121,9 +126,9 @@ The theme hides the `<hr>` text and renders that row as a red horizontal divider
 - Table vertical padding
 - Table outer border color
 
-## Before You Publish
+## Maintenance Checklist
 
-If you plan to share the theme publicly, verify:
+Before cutting a release, verify:
 
 - Reading View and Live Preview both look correct
 - Dataview tables do not reintroduce conflicting backgrounds

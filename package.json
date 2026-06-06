@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build:css": "node scripts/build-css.mjs"
-  }
-}
