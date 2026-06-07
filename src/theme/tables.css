@@ -29,20 +29,20 @@
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) :is(th, td) {
-  border-right: 0 !important;
-  border-left: 0 !important;
+  border-right: 0;
+  border-left: 0;
   vertical-align: top;
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) thead tr {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) th {
   background: none;
-  background-color: transparent !important;
+  background-color: transparent;
   color: var(--srp-markdown-table-header-text);
   border-top: 0;
   border-bottom: 2px solid var(--srp-markdown-table-header-rule);
@@ -55,8 +55,8 @@
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) td {
-  border-color: transparent !important;
-  border-top: 1px solid color-mix(in srgb, var(--srp-markdown-table-rule) 86%, transparent) !important;
+  border-color: transparent;
+  border-top: 1px solid color-mix(in srgb, var(--srp-markdown-table-rule) 86%, transparent);
   padding: calc(var(--srp-table-padding-y) + 0.12em) 0.9rem;
   background: transparent;
 }
@@ -65,8 +65,8 @@
   :where(table:not(.table-view-table), .table-editor) tbody tr,
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) tbody td {
-  border-bottom-color: transparent !important;
-  box-shadow: none !important;
+  border-bottom-color: transparent;
+  box-shadow: none;
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
@@ -96,12 +96,12 @@
       color-mix(in srgb, var(--srp-markdown-table-header-rule) 78%, transparent) calc(50% - 1px),
       color-mix(in srgb, var(--srp-markdown-table-header-rule) 78%, transparent) calc(50% + 1px),
       transparent calc(50% + 1px)
-    ) !important;
+    );
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) :is(hr, .srp-table-divider) {
-  display: none !important;
+  display: none;
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
@@ -160,14 +160,14 @@
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(.table-view-tr-header, table.dataview thead tr) {
-  background-color: var(--srp-dataview-header-surface) !important;
+  background-color: var(--srp-dataview-header-surface);
 }
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(.table-view-th, table.dataview th) {
   padding: 0.58rem 0.9rem;
   background: none;
-  background-color: var(--srp-dataview-header-surface) !important;
+  background-color: var(--srp-dataview-header-surface);
   border-bottom: 2px solid var(--srp-dataview-header-border);
   color: var(--srp-dataview-header-text);
   font-size: inherit;
@@ -186,7 +186,7 @@
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(.table-view-td, table.dataview td) {
   padding: 0.56rem 0.9rem;
-  border-color: transparent !important;
+  border-color: transparent;
   vertical-align: top;
 }
 

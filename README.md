@@ -29,7 +29,7 @@ Saint Red Paper is available in the official Obsidian Community directory. Feedb
 - Fits well with `make.md`'s `Navigator` panel if you want the workspace captures to feel closer to the author's setup
 - Includes built-in `Style Settings` hooks for width, rules, sidebar accents, links, tags, and table density
 - Still behaves predictably even if `Style Settings` is not installed
-- Installs from the standard Obsidian theme files, `theme.css` and `manifest.json`, with split source files included for development
+- Installs from the standard Obsidian theme files, `theme.css` and `manifest.json`
 
 ## Quick Install
 
@@ -140,20 +140,11 @@ Before cutting a release, verify:
 ## Included Files
 
 - `theme.css`: Built Obsidian theme file
-- `src/theme/`: Split CSS source files
-- `scripts/build-css.mjs`: Rebuilds `theme.css` from `src/theme/`
 - `manifest.json`: Obsidian theme manifest
 - `assets/main-light.png`: Main live light workspace capture
 - `assets/main-dark.png`: Main live dark workspace capture
+- `assets/saint-red-paper-community.png`: Community directory preview capture
 - `CHANGELOG.md`: Release notes
-
-## Development
-
-Edit the split source files in `src/theme/`, then rebuild the distributable theme file:
-
-```bash
-npm run build:css
-```
 
 ## Links
 

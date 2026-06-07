@@ -39,7 +39,7 @@
   background: var(--srp-agent-title-gradient);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent !important;
+  color: transparent;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-empty-state {
@@ -98,9 +98,9 @@
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-textarea,
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-hint-overlay {
   padding: 12px 14px;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-input-actions {
@@ -204,42 +204,42 @@
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector select.dropdown {
-  position: absolute !important;
-  inset: 0 !important;
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
+  width: 100%;
+  height: 100%;
+  max-width: none;
   min-width: 0;
-  padding: 0 var(--srp-agent-control-pad-right) 0 var(--srp-agent-control-pad-left) !important;
-  margin: 0 !important;
-  color: var(--text-normal) !important;
-  font-size: 11px !important;
+  padding: 0 var(--srp-agent-control-pad-right) 0 var(--srp-agent-control-pad-left);
+  margin: 0;
+  color: var(--text-normal);
+  font-size: 11px;
   font-weight: 550;
   letter-spacing: -0.01em;
-  cursor: pointer !important;
+  cursor: pointer;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-config-selector-icon {
-  display: none !important;
+  display: none;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button {
   width: 28px;
   height: 28px;
-  border-radius: 7px !important;
-  background-color: var(--interactive-accent) !important;
+  border-radius: 7px;
+  background-color: var(--interactive-accent);
   transition: background-color 120ms ease, transform 120ms ease;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button:hover:not(.agent-client-disabled) {
-  background-color: var(--interactive-accent-hover) !important;
+  background-color: var(--interactive-accent-hover);
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-active,
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-sending,
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-chat-send-button svg.agent-client-icon-inactive {
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-attachment-preview-item {

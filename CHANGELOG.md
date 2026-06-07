@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.9 - 2026-06-07
+
+- Added the repository-local `assets/saint-red-paper-community.png` preview expected by the Obsidian Community page metadata.
+- Removed remaining `!important` declarations from the theme CSS and split source files for community review compatibility.
+- Cleaned the README file list so it only describes files currently included in this minimal theme package.
+
 ## 0.2.8 - 2026-06-06
 
 - Refreshed the README for the new Obsidian Community directory flow and removed obsolete PR/submission wording.

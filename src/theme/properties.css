@@ -110,11 +110,11 @@
 :is(.theme-light, .theme-dark) .metadata-container a.internal-link,
 :is(.theme-light, .theme-dark) .metadata-container a.external-link,
 :is(.theme-light, .theme-dark) .metadata-container .metadata-link-inner {
-  color: var(--text-normal) !important;
+  color: var(--text-normal);
 }
 
 :is(.theme-light, .theme-dark) .metadata-container .clickable-icon[aria-label="일일 노트 열기"] {
-  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) 82%, var(--text-muted)) !important;
+  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) 82%, var(--text-muted));
 }
 
 :is(.theme-light, .theme-dark) .metadata-add-button {
@@ -141,7 +141,7 @@
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="graph"] > .view-content {
   background:
     var(--srp-graph-glow, var(--srp-agent-empty-glow)),
-    var(--srp-graph-surface, var(--srp-right-panel-surface)) !important;
+    var(--srp-graph-surface, var(--srp-right-panel-surface));
 }
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content:is(
@@ -154,7 +154,7 @@
 ) > .view-header {
   margin: 6px 10px 0;
   border: 1px solid transparent;
-  border-bottom: 0 !important;
+  border-bottom: 0;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   background: var(--srp-right-panel-header-surface);
@@ -180,8 +180,8 @@
   [data-type="tag"],
   [data-type="graph"]
 ) > .view-header {
-  background: transparent !important;
-  color: var(--gh-sidebar-muted) !important;
+  background: transparent;
+  color: var(--gh-sidebar-muted);
 }
 
 .theme-light .workspace-split.mod-right-split .workspace-leaf-content:is(
@@ -207,11 +207,11 @@
   [data-type="tag"],
   [data-type="graph"]
 ) > .view-header .view-header-title {
-  font-size: 0.78rem !important;
-  font-weight: 700 !important;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--gh-sidebar-muted) !important;
+  color: var(--gh-sidebar-muted);
 }
 
 .theme-dark .workspace-split.mod-right-split .workspace-leaf-content:is(
@@ -222,8 +222,8 @@
   [data-type="tag"],
   [data-type="graph"]
 ) > .view-header {
-  background: var(--gh-sidebar-bg) !important;
-  color: var(--gh-sidebar-muted) !important;
+  background: var(--gh-sidebar-bg);
+  color: var(--gh-sidebar-muted);
 }
 
 .theme-dark .workspace-split.mod-right-split .workspace-leaf-content:is(
@@ -249,10 +249,10 @@
   [data-type="tag"],
   [data-type="graph"]
 ) > .view-header .view-header-title {
-  font-size: 0.78rem !important;
-  font-weight: 700 !important;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--gh-sidebar-muted) !important;
+  color: var(--gh-sidebar-muted);
 }
 

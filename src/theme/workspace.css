@@ -1,50 +1,50 @@
 /* Root tabs: keep close to Obsidian defaults and use one stable active underline */
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header-container {
-  background: transparent !important;
+  background: transparent;
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header .workspace-tab-header-inner {
-  position: relative !important;
-  background: transparent !important;
-  box-shadow: 0 8px 18px -18px rgba(122, 79, 73, 0.14) !important;
+  position: relative;
+  background: transparent;
+  box-shadow: 0 8px 18px -18px rgba(122, 79, 73, 0.14);
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  border-bottom: 1px solid var(--gh-sidebar-border-soft) !important;
+  border-bottom: 1px solid var(--gh-sidebar-border-soft);
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header .workspace-tab-header-inner::before,
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header .workspace-tab-header-inner::after {
-  display: none !important;
-  content: none !important;
-  opacity: 0 !important;
+  display: none;
+  content: none;
+  opacity: 0;
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner {
-  background: transparent !important;
-  box-shadow: 0 10px 22px -18px rgba(122, 79, 73, 0.16) !important;
+  background: transparent;
+  box-shadow: 0 10px 22px -18px rgba(122, 79, 73, 0.16);
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner::before {
-  content: "" !important;
-  display: block !important;
-  opacity: 1 !important;
+  content: "";
+  display: block;
+  opacity: 1;
   position: absolute;
   left: 10px;
   right: 10px;
   bottom: 1px;
   height: 2px;
-  background: var(--gh-sidebar-accent) !important;
-  border-radius: 999px !important;
+  background: var(--gh-sidebar-accent);
+  border-radius: 999px;
   pointer-events: none;
 }
 
 .theme-light .workspace .mod-root > .workspace-tabs .workspace-tab-header .workspace-tab-header-inner-title {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
