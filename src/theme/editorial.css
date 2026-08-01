@@ -475,28 +475,28 @@ body,
 }
 
 .callout[data-callout="gen"] {
-  --callout-color: 18, 94, 160;
+  --callout-color: rgb(18, 94, 160);
   --callout-icon: lucide-sparkles;
   background: linear-gradient(180deg, rgba(18, 94, 160, 0.09), rgba(18, 94, 160, 0.04));
   border: 1px solid rgba(18, 94, 160, 0.14);
 }
 
 .callout[data-callout="commercial"] {
-  --callout-color: 184, 92, 0;
+  --callout-color: rgb(184, 92, 0);
   --callout-icon: lucide-radio;
   background: linear-gradient(180deg, rgba(184, 92, 0, 0.09), rgba(184, 92, 0, 0.04));
   border: 1px solid rgba(184, 92, 0, 0.14);
 }
 
 .callout[data-callout="baseline"] {
-  --callout-color: 94, 94, 94;
+  --callout-color: rgb(94, 94, 94);
   --callout-icon: lucide-minus-circle;
   background: linear-gradient(180deg, rgba(120, 120, 120, 0.08), rgba(120, 120, 120, 0.035));
   border: 1px solid rgba(120, 120, 120, 0.14);
 }
 
 .callout[data-callout="decision"] {
-  --callout-color: 22, 132, 80;
+  --callout-color: rgb(22, 132, 80);
   --callout-icon: lucide-check-circle-2;
   background: linear-gradient(180deg, rgba(22, 132, 80, 0.09), rgba(22, 132, 80, 0.04));
   border: 1px solid rgba(22, 132, 80, 0.14);
@@ -514,8 +514,8 @@ body,
   gap: 0.55rem;
   padding: 0.45rem 0.7rem 0.5rem;
   margin: -0.2rem -0.28rem 0.4rem;
-  background: linear-gradient(180deg, rgba(var(--callout-color), 0.08), rgba(var(--callout-color), 0.03));
-  border-bottom: 1px solid rgba(var(--callout-color), 0.10);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--callout-color) 8%, transparent), color-mix(in srgb, var(--callout-color) 3%, transparent));
+  border-bottom: 1px solid color-mix(in srgb, var(--callout-color) 10%, transparent);
 }
 
 .callout[data-callout="gen"] .callout-title,
