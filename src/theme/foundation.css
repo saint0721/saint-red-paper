@@ -205,6 +205,10 @@
   --text-on-accent: #383a42;
   --code-background: #ffffff;
   --code-normal: #8f201d;
+  --srp-code-block-bg: #fafafa;
+  --srp-code-gutter-bg: #f2f2f2;
+  --srp-code-block-text: #1f1f1f;
+  --srp-code-point: #a12822;
   --interactive-normal: #fffdfc;
   --interactive-hover: #ffffff;
   --interactive-accent-rgb: 11, 102, 209;

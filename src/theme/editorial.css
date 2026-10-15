@@ -8,11 +8,40 @@
   text-align: left;
 }
 
-.theme-light :not(pre)>code,
-.theme-light pre {
+.theme-light :not(pre)>code {
   background: var(--background-primary);
   box-shadow: inset 0 0 0 1px var(--background-primary-alt);
   border-radius: 4px;
+}
+
+/* Fenced code blocks: light gray surface and near-black text; inline code keeps the accent tone */
+.theme-light pre {
+  --code-normal: var(--srp-code-block-text);
+  background: var(--srp-code-block-bg);
+  box-shadow: inset 0 0 0 1px var(--background-primary-alt);
+  border-radius: 4px;
+}
+
+/* INI code blocks: only the text inside [ ] uses the red accent */
+.theme-light .markdown-rendered pre.language-ini .token.section-name {
+  color: var(--srp-code-point);
+  font-weight: 600;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock.language-ini :is(.cm-hmd-codeblock, .cm-def, .cm-quote, .cm-string) {
+  color: var(--srp-code-block-text);
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock.language-ini .cm-header {
+  color: var(--srp-code-point);
+  font-weight: 600;
+}
+
+/* Exported PDFs keep the theme text colour instead of the print default */
+@media print {
+  .print .markdown-preview-view.markdown-rendered {
+    color: var(--text-normal);
+  }
 }
 
 .theme-dark :not(pre)>code,
@@ -196,7 +225,6 @@ body,
   --font-interface-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-editor-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
   --srp-note-width: 920px;
-  --srp-body-width: 68ch;
   --srp-inline-title-rule-width: 82px;
   --srp-h1-rule-width: 74px;
   --srp-link-custom: #a12822;
@@ -436,7 +464,7 @@ body,
 }
 
 .markdown-rendered p {
-  max-width: var(--srp-body-width, 68ch);
+  max-width: none;
 }
 
 .markdown-rendered ul,

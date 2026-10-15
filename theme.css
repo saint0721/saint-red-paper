@@ -205,6 +205,10 @@
   --text-on-accent: #383a42;
   --code-background: #ffffff;
   --code-normal: #8f201d;
+  --srp-code-block-bg: #fafafa;
+  --srp-code-gutter-bg: #f2f2f2;
+  --srp-code-block-text: #1f1f1f;
+  --srp-code-point: #a12822;
   --interactive-normal: #fffdfc;
   --interactive-hover: #ffffff;
   --interactive-accent-rgb: 11, 102, 209;
@@ -491,11 +495,40 @@
   text-align: left;
 }
 
-.theme-light :not(pre)>code,
-.theme-light pre {
+.theme-light :not(pre)>code {
   background: var(--background-primary);
   box-shadow: inset 0 0 0 1px var(--background-primary-alt);
   border-radius: 4px;
+}
+
+/* Fenced code blocks: light gray surface and near-black text; inline code keeps the accent tone */
+.theme-light pre {
+  --code-normal: var(--srp-code-block-text);
+  background: var(--srp-code-block-bg);
+  box-shadow: inset 0 0 0 1px var(--background-primary-alt);
+  border-radius: 4px;
+}
+
+/* INI code blocks: only the text inside [ ] uses the red accent */
+.theme-light .markdown-rendered pre.language-ini .token.section-name {
+  color: var(--srp-code-point);
+  font-weight: 600;
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock.language-ini :is(.cm-hmd-codeblock, .cm-def, .cm-quote, .cm-string) {
+  color: var(--srp-code-block-text);
+}
+
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock.language-ini .cm-header {
+  color: var(--srp-code-point);
+  font-weight: 600;
+}
+
+/* Exported PDFs keep the theme text colour instead of the print default */
+@media print {
+  .print .markdown-preview-view.markdown-rendered {
+    color: var(--text-normal);
+  }
 }
 
 .theme-dark :not(pre)>code,
@@ -679,7 +712,6 @@ body,
   --font-interface-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-editor-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
   --srp-note-width: 920px;
-  --srp-body-width: 68ch;
   --srp-inline-title-rule-width: 82px;
   --srp-h1-rule-width: 74px;
   --srp-link-custom: #a12822;
@@ -919,7 +951,7 @@ body,
 }
 
 .markdown-rendered p {
-  max-width: var(--srp-body-width, 68ch);
+  max-width: none;
 }
 
 .markdown-rendered ul,
@@ -1900,15 +1932,6 @@ settings:
 		step: 10
 		format: px
 	-
-		id: srp-body-width
-		title: Paragraph width
-		type: variable-number-slider
-		default: 68
-		min: 56
-		max: 86
-		step: 1
-		format: ch
-	-
 		id: srp-inline-title-rule-width
 		title: Inline title rule width
 		type: variable-number-slider
@@ -2020,7 +2043,7 @@ settings:
   .table-wrapper,
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   table:not(.table-view-table):not(.table-editor) {
-  margin: 1.05rem 0;
+  margin: 1.05rem auto;
   border: 0;
   border-radius: var(--srp-markdown-table-radius);
   background: var(--srp-markdown-table-surface);
@@ -2487,4 +2510,11 @@ settings:
 
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-attachment-preview-item {
   border-radius: var(--srp-agent-control-radius);
+}
+
+/* Code Styler: fenced code blocks follow the theme surface in light mode */
+html body.code-styler.theme-light {
+  --code-styler-codeblock-background-colour: var(--srp-code-block-bg);
+  --code-styler-gutter-background-colour: var(--srp-code-gutter-bg);
+  --code-styler-header-background-colour: var(--srp-code-block-bg);
 }

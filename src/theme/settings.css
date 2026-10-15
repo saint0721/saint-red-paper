@@ -18,15 +18,6 @@ settings:
 		step: 10
 		format: px
 	-
-		id: srp-body-width
-		title: Paragraph width
-		type: variable-number-slider
-		default: 68
-		min: 56
-		max: 86
-		step: 1
-		format: ch
-	-
 		id: srp-inline-title-rule-width
 		title: Inline title rule width
 		type: variable-number-slider

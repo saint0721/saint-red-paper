@@ -4,7 +4,7 @@
   .table-wrapper,
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   table:not(.table-view-table):not(.table-editor) {
-  margin: 1.05rem 0;
+  margin: 1.05rem auto;
   border: 0;
   border-radius: var(--srp-markdown-table-radius);
   background: var(--srp-markdown-table-surface);

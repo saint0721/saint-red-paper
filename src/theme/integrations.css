@@ -245,3 +245,10 @@
 :is(.theme-light, .theme-dark) .workspace-split.mod-right-split .workspace-leaf-content[data-type="agent-client-chat-view"] .agent-client-attachment-preview-item {
   border-radius: var(--srp-agent-control-radius);
 }
+
+/* Code Styler: fenced code blocks follow the theme surface in light mode */
+html body.code-styler.theme-light {
+  --code-styler-codeblock-background-colour: var(--srp-code-block-bg);
+  --code-styler-gutter-background-colour: var(--srp-code-gutter-bg);
+  --code-styler-header-background-colour: var(--srp-code-block-bg);
+}
