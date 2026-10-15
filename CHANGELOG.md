@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.3.0 - 2026-10-15
+
+- Fenced code blocks in light mode now use a light gray surface (`#fafafa`) with near-black text; inline code keeps the red accent tone.
+- INI code blocks highlight only the text inside `[ ]` with the theme red (`#a12822`) in reading view, live preview, and PDF export.
+- Code Styler code blocks, gutters, and headers follow the same light surface when the plugin is installed.
+- Paragraphs now use the full note width like lists, and the `Paragraph width` Style Settings option was removed.
+- Markdown tables start from the center of the note.
+- Exported PDFs keep the theme text color instead of Obsidian's print default.
+
 ## 0.2.9 - 2026-06-07
 
 - Added the repository-local `assets/saint-red-paper-community.png` preview expected by the Obsidian Community page metadata.
