@@ -447,6 +447,15 @@ body,
   margin-bottom: 1em;
 }
 
+/* Mermaid sizes label boxes before theme text styles apply; keep its metrics. */
+.markdown-rendered .mermaid p,
+.markdown-rendered .mermaid li {
+  line-height: 1.5;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin: 0;
+}
+
 .markdown-rendered ul li::marker,
 .markdown-rendered ol li::marker {
   color: color-mix(in srgb, var(--srp-link-custom, var(--srp-link)) 92%, var(--text-normal) 8%);

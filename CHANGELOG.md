@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Mermaid diagram labels keep Mermaid's own line height and spacing, so theme paragraph styling no longer clips node and edge labels.
+
 ## 0.3.0 - 2026-10-15
 
 - Fenced code blocks in light mode now use a light gray surface (`#fafafa`) with near-black text; inline code keeps the red accent tone.
