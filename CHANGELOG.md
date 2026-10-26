@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.1 - 2026-10-26
+
 - Mermaid diagram labels keep Mermaid's own line height and spacing, so theme paragraph styling no longer clips node and edge labels.
 
 ## 0.3.0 - 2026-10-15
