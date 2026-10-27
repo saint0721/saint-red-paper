@@ -217,13 +217,73 @@ pre[class*='language-'] {
 
 /* Notion-like reading surface with red accents */
 
+/* Latin faces: Times New Roman scaled up 8% to sit level with Noto Serif KR.
+   unicode-range limits them to Latin, so Hangul falls through to Noto Serif KR.
+   "SRP Heading Latin" maps upright requests to the italic cuts. */
+@font-face {
+  font-family: "SRP Latin";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT");
+  font-style: normal;
+  font-weight: 100 599;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
+@font-face {
+  font-family: "SRP Latin";
+  src: local("Times New Roman Bold"), local("TimesNewRomanPS-BoldMT");
+  font-style: normal;
+  font-weight: 600 900;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
+@font-face {
+  font-family: "SRP Latin";
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT");
+  font-style: italic;
+  font-weight: 100 599;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
+@font-face {
+  font-family: "SRP Latin";
+  src: local("Times New Roman Bold Italic"), local("TimesNewRomanPS-BoldItalicMT");
+  font-style: italic;
+  font-weight: 600 900;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
+@font-face {
+  font-family: "SRP Heading Latin";
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT");
+  font-style: normal;
+  font-weight: 100 599;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
+@font-face {
+  font-family: "SRP Heading Latin";
+  src: local("Times New Roman Bold Italic"), local("TimesNewRomanPS-BoldItalicMT");
+  font-style: normal;
+  font-weight: 600 900;
+  size-adjust: 108%;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
+}
+
 body,
 .markdown-source-view.mod-cm6 .cm-scroller,
 .markdown-preview-view,
 .markdown-rendered {
-  --font-text-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
+  --srp-font-note: "SRP Latin", "Noto Serif KR", "SUIT", serif;
+  --srp-font-heading: "SRP Heading Latin", "Noto Serif KR", "SUIT", serif;
+  --inline-title-font: var(--srp-font-heading);
+  --font-text-theme: var(--srp-font-note);
   --font-interface-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-editor-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-editor-theme: var(--srp-font-note);
   --srp-note-width: 920px;
   --srp-inline-title-rule-width: 82px;
   --srp-h1-rule-width: 74px;
@@ -326,7 +386,7 @@ body,
 .markdown-preview-view .markdown-preview-section > div > h1,
 .markdown-preview-view .markdown-preview-section > div > h2,
 .markdown-preview-view .markdown-preview-section > div > h3 {
-  font-family: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--srp-font-heading);
   color: var(--notion-text);
   letter-spacing: -0.028em;
   line-height: 1.24;
@@ -352,6 +412,7 @@ body,
 
 .inline-title,
 .markdown-source-view.mod-cm6 .cm-sizer > .inline-title {
+  font-family: var(--srp-font-heading);
   color: var(--srp-text-strong);
   letter-spacing: -0.04em;
   margin: 0 0 1.15rem;
@@ -431,11 +492,15 @@ body,
 .markdown-rendered table,
 .markdown-rendered blockquote,
 .markdown-source-view.mod-cm6 .cm-line {
-  font-family: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--srp-font-note);
   line-height: 2;
   letter-spacing: 0.009em;
   word-spacing: 0.05em;
   color: var(--notion-text);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  font-family: var(--srp-font-heading);
 }
 
 .markdown-rendered p,
@@ -454,6 +519,19 @@ body,
   letter-spacing: normal;
   word-spacing: normal;
   margin: 0;
+}
+
+/* Center Mermaid diagrams like centered tables, in reading view, live preview, and PDF export. */
+.markdown-rendered .mermaid,
+.markdown-source-view.mod-cm6 .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+.markdown-rendered .mermaid svg,
+.markdown-source-view.mod-cm6 .mermaid svg {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .markdown-rendered ul li::marker,

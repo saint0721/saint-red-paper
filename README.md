@@ -88,7 +88,7 @@ It is a weaker fit for dashboard-heavy, card-heavy, or heavily gamified workspac
 
 ## Recommended setup
 
-- Font: `SUIT`
+- Fonts: `Noto Serif KR` for note text (Hangul) and `SUIT` for the interface; Latin note text uses Times New Roman
 - Interface mode: Light
 - Accent color: `#cd2623` if you want the OS-level accent to sit close to the theme palette
 - Snippets: Disable older overlapping table/sidebar snippets once this theme is enabled

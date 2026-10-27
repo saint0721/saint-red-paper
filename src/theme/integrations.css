@@ -252,3 +252,253 @@ html body.code-styler.theme-light {
   --code-styler-gutter-background-colour: var(--srp-code-gutter-bg);
   --code-styler-header-background-colour: var(--srp-code-block-bg);
 }
+
+/* File explorer: Navigator-style rows as square white cards
+   Obsidian 1.12 widens nested rows with an inline !important negative margin,
+   so the card is drawn on ::before and pushed back by the depth shift. */
+.nav-files-container {
+  --fe-step: 22px;
+  --fe-shift: 0px;
+  --fe-icon-folder: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
+  --fe-icon-file: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3E%3Cpath d='M14 2v4a2 2 0 0 0 2 2h4'/%3E%3C/svg%3E");
+}
+
+body.theme-light {
+  --fe-card-bg: #ffffff;
+  --fe-card-edge: rgba(42, 36, 34, 0.08);
+  --fe-card-shadow: 0 1px 1px rgba(42, 36, 34, 0.04), 0 1px 3px rgba(42, 36, 34, 0.05);
+  --fe-card-shadow-raised: 0 1px 2px rgba(42, 36, 34, 0.06), 0 4px 10px -4px rgba(42, 36, 34, 0.14);
+  --fe-guide: rgba(42, 36, 34, 0.09);
+  --fe-thread: rgba(205, 38, 35, 0.16);
+}
+
+body.theme-dark {
+  --fe-card-bg: #1b1618;
+  --fe-card-edge: rgba(240, 232, 229, 0.07);
+  --fe-card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 3px rgba(0, 0, 0, 0.45);
+  --fe-card-shadow-raised: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 10px -4px rgba(0, 0, 0, 0.65);
+  --fe-guide: rgba(240, 232, 229, 0.08);
+  --fe-thread: rgba(240, 142, 130, 0.4);
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file {
+  padding: 0;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder.mod-root > .tree-item-children {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder:not(.mod-root) > .tree-item-children {
+  margin: 0 0 0 18px;
+  padding: 0 0 0 3px;
+  border-left: 1px solid var(--fe-guide);
+}
+
+.nav-files-container .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 1); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 2); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 3); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 4); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 5); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 6); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 7); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 8); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 9); }
+.nav-files-container .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) .nav-folder:not(.mod-root) > .tree-item-children { --fe-shift: calc(var(--fe-step) * 10); }
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self:hover,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-active,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-selected {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  margin-block: 0;
+  padding-block: 7px;
+  padding-inline-end: 10px;
+  padding-inline-start: 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 1px 0 1px calc(var(--fe-shift) + 2px);
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self::after {
+  content: "";
+  order: -1;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 8px;
+  background-color: currentColor;
+  opacity: 0.72;
+  -webkit-mask: var(--fe-icon-file) center / contain no-repeat;
+  mask: var(--fe-icon-file) center / contain no-repeat;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title::after {
+  -webkit-mask-image: var(--fe-icon-folder);
+  mask-image: var(--fe-icon-folder);
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title::after {
+  margin-inline-start: 20px;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title .collapse-icon {
+  position: static;
+  order: -2;
+  flex: 0 0 16px;
+  width: 16px;
+  margin: 0 4px 0 0;
+  padding: 0;
+  color: var(--gh-sidebar-muted);
+  opacity: 0.8;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title {
+  color: var(--gh-sidebar-text);
+  font-weight: 600;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title::after {
+  background-color: var(--gh-sidebar-muted);
+  opacity: 0.85;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title::before {
+  background: var(--fe-card-bg);
+  border-color: var(--fe-card-edge);
+  box-shadow: var(--fe-card-shadow);
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title:hover::before,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title:hover::before {
+  background: var(--fe-card-bg);
+  border-color: var(--fe-card-edge);
+  box-shadow: var(--fe-card-shadow-raised);
+}
+
+/* Selection: raised white card; the name carries a thin red underline. */
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-active::before,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-selected::before {
+  border-color: var(--fe-card-edge);
+  box-shadow: var(--fe-card-shadow-raised);
+  background: var(--fe-card-bg);
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self:is(.is-active, .is-selected) .tree-item-inner {
+  text-decoration: underline 1.5px var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  text-underline-offset: 4px;
+}
+
+/* The core explorer clips the name box; give the underline room without changing row height. */
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self:is(.is-active, .is-selected) .tree-item-inner {
+  padding-block-end: 6px;
+  margin-block-end: -6px;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title.is-active,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title.is-active .nav-file-title-content {
+  color: var(--gh-sidebar-text);
+  font-weight: 600;
+}
+
+/* Red path from the root to the open file. */
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title.is-active::after,
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title::after {
+  background-color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  opacity: 1;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder:has(.nav-file-title.is-active) > .tree-item-children {
+  border-left-color: var(--fe-thread);
+}
+
+/* Sidebar tab buttons: same square paper cards; the active one is raised with a red icon. */
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header .workspace-tab-header-inner,
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background: var(--fe-card-bg);
+  border-color: var(--fe-card-edge);
+  border-radius: 0;
+  box-shadow: var(--fe-card-shadow);
+}
+
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  box-shadow: var(--fe-card-shadow-raised);
+}
+
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active {
+  background: transparent;
+}
+
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background: var(--fe-card-bg);
+  border-color: var(--fe-card-edge);
+  border-radius: 0;
+  box-shadow: var(--fe-card-shadow-raised);
+}
+
+body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+}
+
+/* Quieter metadata: red on the "속성" marker and key names; icons, rules and tags are ink-grey. */
+:is(.theme-light, .theme-dark) .metadata-container {
+  --metadata-label-width: 12.5em;
+}
+
+:is(.theme-light, .theme-dark) .metadata-property::before {
+  display: none;
+}
+
+:is(.theme-light, .theme-dark) .metadata-property::after {
+  left: 0;
+  background: var(--background-modifier-border);
+  opacity: 0.7;
+}
+
+:is(.theme-light, .theme-dark) .metadata-property-key {
+  padding-left: 0.35rem;
+}
+
+:is(.theme-light, .theme-dark) .metadata-property-icon {
+  color: var(--text-muted);
+}
+
+:is(.theme-light, .theme-dark) .metadata-property:hover .metadata-property-key-input,
+:is(.theme-light, .theme-dark) .metadata-property:focus-within .metadata-property-key-input {
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+}
+
+/* Pill remove buttons: muted until hovered. */
+:is(.theme-light, .theme-dark) .metadata-container .multi-select-pill-remove-button {
+  color: var(--text-faint);
+}
+
+:is(.theme-light, .theme-dark) .metadata-container .multi-select-pill-remove-button:hover {
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+}
+
+/* Make.md context row under the title: grey by default, red on hover. */
+:is(.theme-light, .theme-dark) .mk-props-contexts-space-name {
+  color: var(--text-muted);
+}
+
+:is(.theme-light, .theme-dark) .mk-props-contexts-space-name:hover {
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+}
