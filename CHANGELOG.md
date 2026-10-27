@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 0.4.0 - 2026-10-27
+
+- Restyled the core file explorer after the Make.md Navigator: folder and file icons, chevrons inside each row, indented square white cards with guide lines, and tighter row spacing.
+- Marked the open file with a thin red underline under its name and a faint red path from the root to it; sidebar tab buttons are square white cards to match.
+- Replaced the pink gradient under the explorer toolbar with a plain grey rule.
+- Set note text, editor, and headings to Times New Roman (scaled 108%) for Latin glyphs and Noto Serif KR for Hangul, with SUIT as the fallback; the interface stays in SUIT. Noto Serif KR must be installed locally.
+- Rendered Latin text in H1–H6 headings and the inline title in Times New Roman Italic; Hangul stays upright.
+- Quieted the properties block: red stays on the heading marker and key names; icons, row rules, and pill remove buttons are grey, and the key column is wider.
+- Turned the Make.md context row under the title grey, with red on hover.
+- Centered Mermaid diagrams in reading view, live preview, and PDF export.
+
 ## 0.3.1 - 2026-10-26
 
 - Mermaid diagram labels keep Mermaid's own line height and spacing, so theme paragraph styling no longer clips node and edge labels.
