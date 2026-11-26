@@ -35,6 +35,9 @@
   --text-on-accent: #141113;
   --code-background: rgba(102, 48, 17, 0.28);
   --code-normal: #f2a35e;
+  --srp-code-block-bg: #181416;
+  --srp-code-block-text: #f0e3df;
+  --srp-code-point: #f08e82;
   --interactive-normal: #181416;
   --interactive-hover: #241d20;
   --interactive-accent-hover: hsl(var(--accent-h), calc(var(--accent-s) + 5%), calc(var(--accent-l) - 10%));
@@ -84,9 +87,9 @@
   --gh-tab-shadow-soft: 0 10px 24px -24px rgba(0, 0, 0, 0.5);
   --gh-tab-shadow-active: 0 14px 30px -24px rgba(0, 0, 0, 0.55);
   --gh-tab-control-hover: #1b1718;
-  --gh-sidebar-accent-custom: #f08e82;
-  --gh-sidebar-active-custom: #23191c;
-  --gh-sidebar-shadow-opacity: 0.18;
+  --gh-sidebar-accent-default: #f08e82;
+  --gh-sidebar-active-default: #23191c;
+  --gh-sidebar-shadow-opacity-default: 0.18;
   --tab-background-active: #171315;
   --tab-container-background: #121011;
   --titlebar-background: #121011;
@@ -256,9 +259,9 @@
   --gh-tab-shadow-soft: 0 12px 28px -18px rgba(122, 79, 73, 0.22);
   --gh-tab-shadow-active: 0 16px 34px -18px rgba(122, 79, 73, 0.26);
   --gh-tab-control-hover: #ffffff;
-  --gh-sidebar-accent-custom: #cd2623;
-  --gh-sidebar-active-custom: #ffffff;
-  --gh-sidebar-shadow-opacity: 0.22;
+  --gh-sidebar-accent-default: #cd2623;
+  --gh-sidebar-active-default: #ffffff;
+  --gh-sidebar-shadow-opacity-default: 0.22;
   --srp-link-custom: #a12822;
   --srp-link-hover-custom: #c63c35;
   --notion-paper: var(--background-primary);
@@ -303,7 +306,7 @@
   --srp-right-panel-header-surface: linear-gradient(90deg, rgba(205, 38, 35, 0.032), rgba(205, 38, 35, 0.00));
   --srp-markdown-table-surface: transparent;
   --srp-markdown-table-header: transparent;
-  --srp-markdown-table-header-text: #8f201d;
+  --srp-markdown-table-header-text: #000000;
   --srp-markdown-table-header-rule: #c74a43;
   --srp-markdown-table-rule: #d8d0cc;
   --srp-markdown-table-stripe: transparent;
@@ -314,7 +317,7 @@
   --srp-dataview-shadow: none;
   --srp-dataview-header-surface: #ffffff;
   --srp-dataview-header-border: #c74a43;
-  --srp-dataview-header-text: #8f201d;
+  --srp-dataview-header-text: #000000;
   --srp-dataview-row-border: transparent;
   --srp-dataview-row-hover: #fffafa;
   --srp-agent-control-surface: linear-gradient(180deg, #ffffff 0%, #fff8f4 100%);
@@ -376,7 +379,6 @@
   --srp-props-radius: 18px;
   --srp-props-row-radius: 14px;
   --srp-table-padding-y: var(--srp-table-padding-y-custom, 0.30em);
-  --srp-table-outer-border: var(--srp-table-outer-border-custom, var(--background-modifier-border));
   --srp-markdown-table-radius: 0px;
   --srp-markdown-table-empty-row-padding-y: 0.14rem;
   --srp-dataview-radius: 4px;
@@ -390,6 +392,7 @@
   --srp-agent-control-surface-hover: color-mix(in srgb, var(--background-primary) 78%, var(--background-secondary));
 
   --inline-title-weight: var(--bold-weight);
+  --inline-title-style: italic;
   --embed-padding: 0 0 0 var(--size-4-4);
 }
 
@@ -704,9 +707,10 @@ pre[class*='language-'] {
 
 /* Notion-like reading surface with red accents */
 
-/* Latin faces: Times New Roman scaled up 8% to sit level with Noto Serif KR.
-   unicode-range limits them to Latin, so Hangul falls through to Noto Serif KR.
-   "SRP Heading Latin" maps upright requests to the italic cuts. */
+/* Latin faces: Times New Roman scaled up 8% (tuned against SUIT).
+   unicode-range limits them to Latin, so Hangul falls through to SUIT.
+   Headings use font-style: italic; SUIT has no italic cut, so the
+   browser synthesizes an oblique for Hangul. */
 @font-face {
   font-family: "SRP Latin";
   src: local("Times New Roman"), local("TimesNewRomanPSMT");
@@ -743,40 +747,30 @@ pre[class*='language-'] {
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
 }
 
-@font-face {
-  font-family: "SRP Heading Latin";
-  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT");
-  font-style: normal;
-  font-weight: 100 599;
-  size-adjust: 108%;
-  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
-}
-
-@font-face {
-  font-family: "SRP Heading Latin";
-  src: local("Times New Roman Bold Italic"), local("TimesNewRomanPS-BoldItalicMT");
-  font-style: normal;
-  font-weight: 600 900;
-  size-adjust: 108%;
-  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F;
-}
-
-body,
-.markdown-source-view.mod-cm6 .cm-scroller,
-.markdown-preview-view,
-.markdown-rendered {
-  --srp-font-note: "SRP Latin", "Noto Serif KR", "SUIT", serif;
-  --srp-font-heading: "SRP Heading Latin", "Noto Serif KR", "SUIT", serif;
-  --inline-title-font: var(--srp-font-heading);
-  --font-text-theme: var(--srp-font-note);
-  --font-interface-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-editor-theme: var(--srp-font-note);
+/* Style Settings injects these on body, so declare them on body only.
+   Re-declaring them on editor/preview selectors would shadow the user value. */
+body {
+  --srp-table-label: "Table";
+  --srp-figure-label: "Figure";
   --srp-note-width: 920px;
   --srp-inline-title-rule-width: 82px;
   --srp-h1-rule-width: 74px;
   --srp-link-custom: #a12822;
   --srp-link-hover-custom: #c63c35;
   --srp-tag-radius: 999px;
+}
+
+body,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view,
+.markdown-rendered {
+  --srp-font-note: "SRP Latin", "SUIT", sans-serif;
+  --srp-font-heading: "SRP Latin", "SUIT", sans-serif;
+  --inline-title-font: var(--srp-font-heading);
+  --font-text-theme: var(--srp-font-note);
+  --font-interface-theme: "SUIT", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-editor-theme: var(--srp-font-note);
+  --font-monospace-theme: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, "SUIT", monospace;
   --notion-paper: var(--background-primary);
   --notion-surface: var(--background-primary-alt);
   --notion-border: rgba(205, 38, 35, 0.08);
@@ -808,8 +802,6 @@ body,
 .theme-dark .markdown-source-view.mod-cm6 .cm-scroller,
 .theme-dark .markdown-preview-view,
 .theme-dark .markdown-rendered {
-  --srp-link-custom: #f0a39a;
-  --srp-link-hover-custom: #ffc0b8;
   --notion-paper: #141113;
   --notion-surface: #181416;
   --notion-border: rgba(240, 142, 130, 0.14);
@@ -874,6 +866,7 @@ body,
 .markdown-preview-view .markdown-preview-section > div > h2,
 .markdown-preview-view .markdown-preview-section > div > h3 {
   font-family: var(--srp-font-heading);
+  font-style: italic;
   color: var(--notion-text);
   letter-spacing: -0.028em;
   line-height: 1.24;
@@ -900,11 +893,12 @@ body,
 .inline-title,
 .markdown-source-view.mod-cm6 .cm-sizer > .inline-title {
   font-family: var(--srp-font-heading);
+  font-style: italic;
   color: var(--srp-text-strong);
   letter-spacing: -0.04em;
   margin: 0 0 1.15rem;
   padding: 0 0 0.75rem;
-  border-bottom: 1px solid rgba(159, 29, 29, 0.14);
+  border-bottom: 1px solid color-mix(in srgb, var(--srp-accent-strong) 14%, transparent);
   position: relative;
 }
 
@@ -930,7 +924,7 @@ body,
   margin-top: 0.4rem;
   margin-bottom: 0.9rem;
   padding-bottom: 0.45rem;
-  border-bottom: 1px solid rgba(159, 29, 29, 0.12);
+  border-bottom: 1px solid color-mix(in srgb, var(--srp-accent-strong) 12%, transparent);
   position: relative;
 }
 
@@ -949,7 +943,7 @@ body,
   margin-top: 2.1rem;
   margin-bottom: 0.82rem;
   padding-left: 0.7rem;
-  border-left: 3px solid rgba(159, 29, 29, 0.18);
+  border-left: 3px solid color-mix(in srgb, var(--srp-accent-strong) 18%, transparent);
 }
 
 .markdown-rendered h3 {
@@ -971,7 +965,7 @@ body,
   right: 0;
   bottom: -3px;
   height: 1px;
-  background: rgba(159, 29, 29, 0.26);
+  background: color-mix(in srgb, var(--srp-accent-strong) 26%, transparent);
 }
 
 .markdown-rendered p,
@@ -988,6 +982,7 @@ body,
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
   font-family: var(--srp-font-heading);
+  font-style: italic;
 }
 
 .markdown-rendered p,
@@ -1061,7 +1056,7 @@ body,
 .markdown-preview-view hr {
   margin: 1.7rem 0 1.5rem;
   border: none;
-  border-top: 1px solid rgba(159, 29, 29, 0.14);
+  border-top: 1px solid color-mix(in srgb, var(--srp-accent-strong) 14%, transparent);
   position: relative;
 }
 
@@ -1072,7 +1067,7 @@ body,
   width: 56px;
   height: 2px;
   margin-top: -1px;
-  background: rgba(159, 29, 29, 0.42);
+  background: color-mix(in srgb, var(--srp-accent-strong) 42%, transparent);
   border-radius: 999px;
 }
 
@@ -1196,8 +1191,8 @@ body,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link,
 .markdown-source-view.mod-cm6 .cm-link,
 .markdown-source-view.mod-cm6 .cm-url {
-  color: var(--srp-link-custom, var(--srp-link));
-  box-shadow: inset 0 -1px 0 rgba(159, 29, 29, 0.22);
+  color: var(--srp-link-preset, var(--srp-link-custom, var(--srp-link)));
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--srp-accent-strong) 22%, transparent);
   transition: color 120ms ease, box-shadow 120ms ease;
 }
 
@@ -1208,8 +1203,8 @@ body,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link:hover,
 .markdown-source-view.mod-cm6 .cm-link:hover,
 .markdown-source-view.mod-cm6 .cm-url:hover {
-  color: var(--srp-link-hover-custom, var(--srp-link-hover));
-  box-shadow: inset 0 -1px 0 rgba(159, 29, 29, 0.5);
+  color: var(--srp-link-hover-preset, var(--srp-link-hover-custom, var(--srp-link-hover)));
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--srp-accent-strong) 50%, transparent);
 }
 
 .tag,
@@ -1353,21 +1348,21 @@ a.tag,
   border-radius: 8px;
   box-shadow:
     0 10px 22px -24px rgba(122, 79, 73, 0.18),
-    inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+    inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-light .workspace-split.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner {
   background: linear-gradient(180deg, #ffffff 0%, #fff4ef 100%);
   box-shadow:
     0 10px 22px -24px rgba(122, 79, 73, 0.18),
-    inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+    inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-light .workspace-split.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .theme-light .workspace-split.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .theme-light .workspace-split.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .theme-light .workspace-split.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-light .workspace-split.mod-left-split .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
@@ -1547,7 +1542,7 @@ a.tag,
 .theme-light .workspace-split.mod-right-split .clickable-icon[aria-pressed="true"],
 .theme-light .workspace-split.mod-left-split .nav-action-button[aria-pressed="true"],
 .theme-light .workspace-split.mod-right-split .nav-action-button[aria-pressed="true"] {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-light .workspace-split.mod-left-split .clickable-icon.is-active:hover,
@@ -1558,7 +1553,7 @@ a.tag,
 .theme-light .workspace-split.mod-right-split .clickable-icon[aria-pressed="true"]:hover,
 .theme-light .workspace-split.mod-left-split .nav-action-button[aria-pressed="true"]:hover,
 .theme-light .workspace-split.mod-right-split .nav-action-button[aria-pressed="true"]:hover {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-dark .workspace-split.mod-left-split,
@@ -1571,14 +1566,14 @@ a.tag,
   border-right: none;
   position: relative;
   z-index: 5;
-  box-shadow: 10px 0 22px -24px rgba(var(--gh-sidebar-edge-shadow-rgb), var(--gh-sidebar-shadow-opacity));
+  box-shadow: 10px 0 22px -24px rgba(var(--gh-sidebar-edge-shadow-rgb), var(--gh-sidebar-shadow-opacity, var(--gh-sidebar-shadow-opacity-default)));
 }
 
 .theme-dark .workspace-split.mod-right-split {
   border-left: none;
   position: relative;
   z-index: 5;
-  box-shadow: -10px 0 22px -24px rgba(var(--gh-sidebar-edge-shadow-rgb), var(--gh-sidebar-shadow-opacity));
+  box-shadow: -10px 0 22px -24px rgba(var(--gh-sidebar-edge-shadow-rgb), var(--gh-sidebar-shadow-opacity, var(--gh-sidebar-shadow-opacity-default)));
 }
 
 .theme-dark .workspace-split.mod-left-split .workspace-tabs,
@@ -1628,14 +1623,14 @@ a.tag,
   color: var(--gh-sidebar-text);
   border-color: var(--gh-sidebar-border);
   border-radius: 8px;
-  box-shadow: 0 10px 22px -24px rgba(0, 0, 0, 0.55), inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  box-shadow: 0 10px 22px -24px rgba(0, 0, 0, 0.55), inset 2px 0 0 var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-dark .workspace-split.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .theme-dark .workspace-split.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .theme-dark .workspace-split.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .theme-dark .workspace-split.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 .theme-dark .workspace-split.mod-left-split .tree-item-self,
@@ -1697,7 +1692,7 @@ a.tag,
 .theme-dark .workspace-split.mod-right-split .nav-file-title.is-active,
 .theme-dark .workspace-split.mod-left-split .tag-pane-tag.is-active,
 .theme-dark .workspace-split.mod-right-split .tag-pane-tag.is-active {
-  background: var(--gh-sidebar-active-custom, var(--gh-sidebar-active));
+  background: var(--gh-sidebar-active-custom, var(--gh-sidebar-active-default));
   color: var(--gh-sidebar-text);
   font-weight: 590;
   border-color: rgba(240, 142, 130, 0.16);
@@ -1774,7 +1769,7 @@ a.tag,
   height: 6px;
   margin-right: 8px;
   border-radius: 999px;
-  background: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  background: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
   vertical-align: middle;
   transform: translateY(-1px);
 }
@@ -1798,8 +1793,8 @@ a.tag,
   width: 5px;
   height: 5px;
   border-radius: 999px;
-  background: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) 10%, transparent);
+  background: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default)) 10%, transparent);
   opacity: 0.9;
 }
 
@@ -1829,7 +1824,7 @@ a.tag,
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) 64%, var(--text-muted));
+  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default)) 64%, var(--text-muted));
 }
 
 :is(.theme-light, .theme-dark) .metadata-property-value {
@@ -1857,7 +1852,7 @@ a.tag,
 }
 
 :is(.theme-light, .theme-dark) .metadata-container .clickable-icon[aria-label="일일 노트 열기"] {
-  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent)) 82%, var(--text-muted));
+  color: color-mix(in srgb, var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default)) 82%, var(--text-muted));
 }
 
 :is(.theme-light, .theme-dark) .metadata-add-button {
@@ -2003,125 +1998,236 @@ a.tag,
 name: Saint Red Paper
 id: saint-red-paper
 settings:
-	-
-		id: srp-layout
-		title: Layout
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: srp-note-width
-		title: Note width
-		type: variable-number-slider
-		default: 920
-		min: 760
-		max: 1280
-		step: 10
-		format: px
-	-
-		id: srp-inline-title-rule-width
-		title: Inline title rule width
-		type: variable-number-slider
-		default: 82
-		min: 40
-		max: 140
-		step: 2
-		format: px
-	-
-		id: srp-h1-rule-width
-		title: H1 rule width
-		type: variable-number-slider
-		default: 74
-		min: 40
-		max: 140
-		step: 2
-		format: px
-	-
-		id: srp-sidebar
-		title: Sidebar
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: gh-sidebar-accent-custom
-		title: Sidebar active accent
-		type: variable-color
-		format: hex
-		default: '#cd2623'
-		opacity: false
-	-
-		id: gh-sidebar-active-custom
-		title: Sidebar active background
-		type: variable-color
-		format: hex
-		default: '#fff7f5'
-		opacity: false
-	-
-		id: gh-sidebar-shadow-opacity
-		title: Sidebar edge shadow opacity
-		type: variable-number-slider
-		default: 0.14
-		min: 0
-		max: 0.3
-		step: 0.01
-	-
-		id: srp-links-tags
-		title: Links and Tags
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: srp-link-custom
-		title: Link color
-		type: variable-color
-		format: hex
-		default: '#a12822'
-		opacity: false
-	-
-		id: srp-link-hover-custom
-		title: Link hover color
-		type: variable-color
-		format: hex
-		default: '#c63c35'
-		opacity: false
-	-
-		id: srp-tag-radius
-		title: Tag shape
-		type: variable-select
-		default: '999px'
-		allowEmpty: false
-		options:
-			-
-				label: Pill
-				value: '999px'
-			-
-				label: Rounded
-				value: '12px'
-			-
-				label: Square
-				value: '4px'
-	-
-		id: srp-tables
-		title: Tables
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: srp-table-padding-y-custom
-		title: Table vertical padding
-		type: variable-number-slider
-		default: 0.30
-		min: 0.14
-		max: 0.60
-		step: 0.02
-		format: em
-	-
-		id: srp-table-outer-border-custom
-		title: Table outer border color
-		type: variable-color
-		format: hex
-		default: '#c74a43'
-	opacity: false
+  -
+    id: srp-layout
+    title: Layout
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: srp-note-width
+    title: Note width
+    type: variable-number-slider
+    default: 920
+    min: 760
+    max: 1280
+    step: 10
+    format: px
+  -
+    id: srp-inline-title-rule-width
+    title: Inline title rule width
+    type: variable-number-slider
+    default: 82
+    min: 40
+    max: 140
+    step: 2
+    format: px
+  -
+    id: srp-h1-rule-width
+    title: H1 rule width
+    type: variable-number-slider
+    default: 74
+    min: 40
+    max: 140
+    step: 2
+    format: px
+  -
+    id: srp-sidebar
+    title: Sidebar
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: gh-sidebar-accent-custom
+    title: Sidebar active accent
+    type: variable-color
+    format: hex
+    default: '#cd2623'
+    opacity: false
+  -
+    id: gh-sidebar-active-custom
+    title: Sidebar active background
+    type: variable-color
+    format: hex
+    default: '#fff7f5'
+    opacity: false
+  -
+    id: gh-sidebar-shadow-opacity
+    title: Sidebar edge shadow opacity
+    type: variable-number-slider
+    default: 0.14
+    min: 0
+    max: 0.3
+    step: 0.01
+  -
+    id: srp-links-tags
+    title: Links and Tags
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: srp-link-custom
+    title: Link color
+    type: variable-color
+    format: hex
+    default: '#a12822'
+    opacity: false
+  -
+    id: srp-link-hover-custom
+    title: Link hover color
+    type: variable-color
+    format: hex
+    default: '#c63c35'
+    opacity: false
+  -
+    id: srp-link-style
+    title: Link color preset
+    description: Academic blue separates clickable links from red emphasis. The preset replaces the custom link colors above; list markers stay red.
+    type: class-select
+    allowEmpty: false
+    default: srp-link-theme
+    options:
+      -
+        label: Theme red
+        value: srp-link-theme
+      -
+        label: Academic blue
+        value: srp-link-blue
+  -
+    id: srp-tag-radius
+    title: Tag shape
+    type: variable-select
+    default: '999px'
+    allowEmpty: false
+    options:
+      -
+        label: Pill
+        value: '999px'
+      -
+        label: Rounded
+        value: '12px'
+      -
+        label: Square
+        value: '4px'
+  -
+    id: srp-tables
+    title: Tables
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: srp-table-padding-y-custom
+    title: Table vertical padding
+    type: variable-number-slider
+    default: 0.30
+    min: 0.14
+    max: 0.60
+    step: 0.02
+    format: em
+  -
+    id: srp-table-style
+    title: Table style
+    description: IEEE draws a top rule, a header rule, light row rules, and a bottom rule, and fits the table to its content. A single note can opt in with cssclasses ieee-table.
+    type: class-select
+    allowEmpty: false
+    default: srp-table-paper
+    options:
+      -
+        label: Paper
+        value: srp-table-paper
+      -
+        label: IEEE
+        value: srp-table-ieee
+  -
+    id: srp-print
+    title: PDF export
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: srp-print-keep-together
+    title: Keep blocks together in PDF
+    description: Headings never sit alone at the bottom of a page, short tables, figures, callouts, and code stay on one page, long tables repeat their header, and links print as plain colored text.
+    type: class-toggle
+    default: true
+  -
+    id: srp-academic
+    title: Academic
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: srp-print-numbering
+    title: Number headings, tables, and figures in PDF
+    description: PDF export only. H2 becomes 1., 2., H3 becomes 1.1, tables get a label above and images a label below. Leave off for notes whose headings are already numbered by hand. Not shown on screen, because Obsidian renders long notes in pieces and on-screen counters would restart.
+    type: class-toggle
+    default: false
+  -
+    id: srp-table-label
+    title: Table label
+    type: variable-text
+    default: Table
+    quotes: true
+  -
+    id: srp-figure-label
+    title: Figure label
+    type: variable-text
+    default: Figure
+    quotes: true
+  -
+    id: srp-reference-list
+    title: Reference list layout
+    description: Lists right after a heading named References, Bibliography, 참고문헌, or 출처 drop their bullets and use a hanging indent, like a paper's reference list (reading view and PDF).
+    type: class-toggle
+    default: true
+  -
+    id: srp-korean-wrap
+    title: Break Korean lines between words
+    description: Korean and other CJK text wraps only between words (word-break keep-all), so a word like 상호작용 is never split across lines, including in table cells. Long URLs still wrap.
+    type: class-toggle
+    default: true
+  -
+    id: srp-justify
+    title: Justify body text
+    description: Paragraphs and list items align to both edges like a printed paper. Headings, tables, and code are not affected.
+    type: class-toggle
+    default: false
+  -
+    id: srp-compact-tables
+    title: Smaller table text
+    description: Table text is set a step smaller than body text, as in papers, so tables take less width.
+    type: class-toggle
+    default: false
+  -
+    id: srp-paper-footnotes
+    title: Paper-style footnotes
+    description: Footnote marks become small superscript numbers, and the footnote list sits under a short rule in smaller text.
+    type: class-toggle
+    default: false
+  -
+    id: srp-paper-abstract
+    title: Paper-style abstract callout
+    description: The abstract callout (> [!abstract]) becomes an indented block in smaller text with an Abstract heading, like the first page of a paper.
+    type: class-toggle
+    default: false
+  -
+    id: srp-print-plain-links
+    title: Plain internal links in PDF
+    description: PDF export only. Links to other notes print as ordinary text, since they do not open outside the vault. External links and citation numbers keep their color.
+    type: class-toggle
+    default: false
+  -
+    id: srp-print-hr-page-break
+    title: Horizontal rule starts a new PDF page
+    description: PDF export only. A --- line in the note becomes a page break instead of a rule.
+    type: class-toggle
+    default: false
+  -
+    id: srp-print-paper-title
+    title: Paper title in PDF
+    description: PDF export only. The file-name title is centered and set larger like a paper title, without the rule under it, and properties are not printed.
+    type: class-toggle
+    default: false
 */
 
 /* Markdown table styling */
@@ -2207,7 +2313,7 @@ settings:
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(table:not(.table-view-table), .table-editor) tbody tr
-  :is(td:empty, td:has(> br:only-child)) {
+  td:empty {
   padding-top: var(--srp-markdown-table-empty-row-padding-y);
   padding-bottom: var(--srp-markdown-table-empty-row-padding-y);
   line-height: 0.8;
@@ -2304,7 +2410,7 @@ settings:
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(.table-view-th, table.dataview th) .dataview.small-text {
-  color: var(--srp-link-custom, var(--srp-link));
+  color: var(--srp-link-preset, var(--srp-link-custom, var(--srp-link)));
   font-weight: 700;
   margin-left: 0.4rem;
 }
@@ -2348,7 +2454,7 @@ settings:
 
 :is(.theme-light, .theme-dark) :is(.markdown-rendered, .markdown-preview-view)
   :where(.table-view-table, table.dataview) a.internal-link:hover {
-  color: var(--srp-link-custom, var(--srp-link));
+  color: var(--srp-link-preset, var(--srp-link-custom, var(--srp-link)));
 }
 
 /* Agent Client panel refinement
@@ -2606,8 +2712,8 @@ html body.code-styler.theme-light {
   --code-styler-header-background-colour: var(--srp-code-block-bg);
 }
 
-/* File explorer: Navigator-style rows as square white cards
-   Obsidian 1.12 widens nested rows with an inline !important negative margin,
+/* File explorer: plain rows on the paper; a soft tint marks hover and the
+   open file. Obsidian 1.12 widens nested rows with an inline !important negative margin,
    so the card is drawn on ::before and pushed back by the depth shift. */
 .nav-files-container {
   --fe-step: 22px;
@@ -2622,7 +2728,9 @@ body.theme-light {
   --fe-card-shadow: 0 1px 1px rgba(42, 36, 34, 0.04), 0 1px 3px rgba(42, 36, 34, 0.05);
   --fe-card-shadow-raised: 0 1px 2px rgba(42, 36, 34, 0.06), 0 4px 10px -4px rgba(42, 36, 34, 0.14);
   --fe-guide: rgba(42, 36, 34, 0.09);
-  --fe-thread: rgba(205, 38, 35, 0.16);
+  --fe-thread: rgba(42, 36, 34, 0.2);
+  --fe-row-hover: rgba(42, 36, 34, 0.045);
+  --fe-row-active: rgba(205, 38, 35, 0.05);
 }
 
 body.theme-dark {
@@ -2631,7 +2739,9 @@ body.theme-dark {
   --fe-card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 3px rgba(0, 0, 0, 0.45);
   --fe-card-shadow-raised: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 10px -4px rgba(0, 0, 0, 0.65);
   --fe-guide: rgba(240, 232, 229, 0.08);
-  --fe-thread: rgba(240, 142, 130, 0.4);
+  --fe-thread: rgba(240, 232, 229, 0.2);
+  --fe-row-hover: rgba(240, 232, 229, 0.05);
+  --fe-row-active: rgba(240, 142, 130, 0.08);
 }
 
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder,
@@ -2671,7 +2781,7 @@ body.theme-dark {
   display: flex;
   align-items: center;
   margin-block: 0;
-  padding-block: 7px;
+  padding-block: 5px;
   padding-inline-end: 10px;
   padding-inline-start: 10px;
   background: transparent;
@@ -2686,7 +2796,7 @@ body.theme-dark {
   z-index: -1;
   inset: 1px 0 1px calc(var(--fe-shift) + 2px);
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 6px;
   transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
 }
 
@@ -2734,28 +2844,28 @@ body.theme-dark {
 }
 
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title::before {
-  background: var(--fe-card-bg);
-  border-color: var(--fe-card-edge);
-  box-shadow: var(--fe-card-shadow);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder-title:hover::before,
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title:hover::before {
-  background: var(--fe-card-bg);
-  border-color: var(--fe-card-edge);
-  box-shadow: var(--fe-card-shadow-raised);
+  background: var(--fe-row-hover);
+  border-color: transparent;
+  box-shadow: none;
 }
 
-/* Selection: raised white card; the name carries a thin red underline. */
+/* Selection: faint red tint; the name carries a thin red underline. */
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-active::before,
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self.is-selected::before {
-  border-color: var(--fe-card-edge);
-  box-shadow: var(--fe-card-shadow-raised);
-  background: var(--fe-card-bg);
+  border-color: transparent;
+  box-shadow: none;
+  background: var(--fe-row-active);
 }
 
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self:is(.is-active, .is-selected) .tree-item-inner {
-  text-decoration: underline 1.5px var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  text-decoration: underline 1.5px var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
   text-underline-offset: 4px;
 }
 
@@ -2771,10 +2881,29 @@ body.theme-dark {
   font-weight: 600;
 }
 
-/* Red path from the root to the open file. */
+/* File names use the folder ink at a lighter weight; weight carries the hierarchy. */
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title:not(.is-active) .nav-file-title-content {
+  color: var(--gh-sidebar-text);
+  font-weight: 450;
+}
+
+/* Hovered names turn red. */
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self :is(.nav-folder-title-content, .nav-file-title-content) {
+  transition: color 120ms ease;
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .tree-item-self:hover :is(.nav-folder-title-content, .nav-file-title-content) {
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
+}
+
+.workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder.mod-root > .tree-item-children > .nav-folder:not(:first-child) {
+  margin-top: 6px;
+}
+
+/* Path from the root to the open file: darker grey icons and guide. */
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-file-title.is-active::after,
 .workspace-split:is(.mod-left-split, .mod-right-split) .nav-files-container .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title::after {
-  background-color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  background-color: var(--gh-sidebar-text);
   opacity: 1;
 }
 
@@ -2807,7 +2936,7 @@ body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-rig
 }
 
 body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-right-split) .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 /* Quieter metadata: red on the "속성" marker and key names; icons, rules and tags are ink-grey. */
@@ -2835,7 +2964,7 @@ body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-rig
 
 :is(.theme-light, .theme-dark) .metadata-property:hover .metadata-property-key-input,
 :is(.theme-light, .theme-dark) .metadata-property:focus-within .metadata-property-key-input {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 /* Pill remove buttons: muted until hovered. */
@@ -2844,7 +2973,7 @@ body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-rig
 }
 
 :is(.theme-light, .theme-dark) .metadata-container .multi-select-pill-remove-button:hover {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
 }
 
 /* Make.md context row under the title: grey by default, red on hover. */
@@ -2853,5 +2982,518 @@ body:is(.theme-light, .theme-dark) .workspace-split:is(.mod-left-split, .mod-rig
 }
 
 :is(.theme-light, .theme-dark) .mk-props-contexts-space-name:hover {
-  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent));
+  color: var(--gh-sidebar-accent-custom, var(--gh-sidebar-accent-default));
+}
+
+/* Link color preset: academic blue (Style Settings > Links and Tags > Link color preset) */
+
+.theme-light.srp-link-blue {
+  --srp-link-preset: #1f5aa6;
+  --srp-link-hover-preset: #2f73c9;
+  --link-color: #1f5aa6;
+  --link-color-hover: #2f73c9;
+  --link-external-color: #1f5aa6;
+  --link-external-color-hover: #2f73c9;
+  --link-unresolved-color: #1f5aa6;
+}
+
+.theme-dark.srp-link-blue {
+  --srp-link-preset: #8fb4e8;
+  --srp-link-hover-preset: #b5cff2;
+  --link-color: #8fb4e8;
+  --link-color-hover: #b5cff2;
+  --link-external-color: #8fb4e8;
+  --link-external-color-hover: #b5cff2;
+  --link-unresolved-color: #8fb4e8;
+}
+
+.srp-link-blue :is(.markdown-rendered, .markdown-preview-view, .metadata-container) :is(a.internal-link, a.external-link),
+.srp-link-blue .markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url) {
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--srp-link-preset) 28%, transparent);
+}
+
+.srp-link-blue :is(.markdown-rendered, .markdown-preview-view, .metadata-container) :is(a.internal-link, a.external-link):hover,
+.srp-link-blue .markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url):hover {
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--srp-link-hover-preset) 55%, transparent);
+}
+
+.srp-link-blue :is(.markdown-rendered, .markdown-preview-view) a.internal-link.is-unresolved {
+  color: color-mix(in srgb, var(--srp-link-preset) 55%, transparent);
+}
+
+/* IEEE table style (Style Settings > Tables > Table style, or cssclasses: ieee-table)
+ * Top rule and bottom rule (2px), header rule (1px), light row rules; the table fits its content. */
+
+:is(body.srp-table-ieee, .theme-light .ieee-table, .theme-dark .ieee-table) .table-wrapper {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:is(body.srp-table-ieee, .theme-light .ieee-table, .theme-dark .ieee-table) :is(table:not(.table-view-table), .table-editor) {
+  width: auto;
+  max-width: 100%;
+}
+
+:is(body.srp-table-ieee, .theme-light .ieee-table, .theme-dark .ieee-table) :is(table:not(.table-view-table), .table-editor) th {
+  border-top: 2px solid var(--srp-markdown-table-header-rule);
+  border-bottom: 1px solid var(--srp-markdown-table-header-rule);
+  padding-top: calc(var(--srp-table-padding-y) + 0.22em);
+  padding-bottom: calc(var(--srp-table-padding-y) + 0.18em);
+}
+
+:is(body.srp-table-ieee, .theme-light .ieee-table, .theme-dark .ieee-table) :is(table:not(.table-view-table), .table-editor) td {
+  border-top: 1px solid var(--srp-markdown-table-rule);
+}
+
+:is(body.srp-table-ieee, .theme-light .ieee-table, .theme-dark .ieee-table) :is(table:not(.table-view-table), .table-editor) tbody tr:last-child td {
+  border-bottom: 2px solid var(--srp-markdown-table-header-rule);
+}
+
+/* PDF export: keep blocks together (Style Settings > PDF export) */
+
+@media print {
+  body.srp-print-keep-together .markdown-preview-view :is(h1, h2, h3, h4, h5, h6) {
+    break-after: avoid-page;
+    break-inside: avoid;
+  }
+
+  body.srp-print-keep-together .markdown-preview-view p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  body.srp-print-keep-together .markdown-preview-view .table-wrapper,
+  body.srp-print-keep-together .markdown-preview-view :is(img, figure, .callout, blockquote, pre, .math-block, .mermaid) {
+    break-inside: avoid-page;
+  }
+
+  body.srp-print-keep-together .markdown-preview-view thead {
+    display: table-header-group;
+  }
+
+  body.srp-print-keep-together .markdown-preview-view :is(a.internal-link, a.external-link) {
+    box-shadow: none;
+  }
+}
+
+/* Citation numbers: [n] takes the link color everywhere. Live Preview marks a bare [n]
+ * as cm-hmd-barelink; reading view and PDF need a span.srp-cite from a post-processor
+ * (any plugin may add it, the theme only styles it). */
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6 .cm-hmd-barelink,
+:is(.theme-light, .theme-dark) .srp-cite {
+  color: var(--link-color);
+  box-shadow: none;
+  text-decoration: none;
+}
+
+/* Academic: auto-numbered headings, tables, and figures in PDF export (Style Settings > Academic) */
+
+@media print {
+  body.srp-print-numbering .markdown-preview-view {
+    counter-reset: srp-h2 srp-h3 srp-table srp-figure;
+  }
+
+  body.srp-print-numbering .markdown-preview-view div:has(> h2) {
+    counter-increment: srp-h2;
+    counter-reset: srp-h3;
+  }
+
+  body.srp-print-numbering .markdown-preview-view h2::before {
+    content: counter(srp-h2) ". ";
+  }
+
+  body.srp-print-numbering .markdown-preview-view div:has(> h3) {
+    counter-increment: srp-h3;
+  }
+
+  body.srp-print-numbering .markdown-preview-view h3::before {
+    content: counter(srp-h2) "." counter(srp-h3) " ";
+  }
+
+  body.srp-print-numbering .markdown-preview-view table:not(.table-view-table) {
+    counter-increment: srp-table;
+  }
+
+  body.srp-print-numbering .markdown-preview-view table:not(.table-view-table)::before {
+    content: var(--srp-table-label) " " counter(srp-table);
+    display: table-caption;
+    caption-side: top;
+    margin-bottom: 0.35em;
+    text-align: center;
+    font-size: 0.88em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  body.srp-print-numbering .markdown-preview-view .internal-embed.image-embed {
+    counter-increment: srp-figure;
+  }
+
+  body.srp-print-numbering .markdown-preview-view .internal-embed.image-embed::after {
+    content: var(--srp-figure-label) " " counter(srp-figure);
+  }
+
+  body.srp-print-numbering .markdown-preview-view .internal-embed.image-embed[data-srp-caption]::after {
+    content: var(--srp-figure-label) " " counter(srp-figure) ". " attr(data-srp-caption);
+    display: block;
+    margin-top: 0.35em;
+    text-align: center;
+    font-size: 0.88em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+}
+
+/* Academic: reference list layout (Style Settings > Academic) */
+
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> ul) ul,
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> p) + div:has(> ul) ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> ul) li,
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> p) + div:has(> ul) li {
+  padding-left: 2.4em;
+  text-indent: -2.4em;
+  font-size: 0.94em;
+  line-height: 1.6;
+  margin-bottom: 0.3em;
+}
+
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> ul) li > .list-bullet,
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> p) + div:has(> ul) li > .list-bullet {
+  display: none;
+}
+
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> ul) li::marker,
+body.srp-reference-list .markdown-preview-view div:has(> :is(h2, h3):is([data-heading*="References" i], [data-heading*="Bibliography" i], [data-heading*="참고문헌"], [data-heading="출처"])) + div:has(> p) + div:has(> ul) li::marker {
+  content: "";
+}
+
+/* Academic: Korean line breaking (Style Settings > Academic) */
+
+body.srp-korean-wrap :is(.markdown-preview-view, .markdown-rendered, .markdown-source-view.mod-cm6 .cm-content) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+body.srp-korean-wrap :is(.markdown-preview-view, .markdown-rendered, .markdown-source-view.mod-cm6) :is(td, th) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* Academic: justified body text */
+
+body.srp-justify :is(.markdown-preview-view, .markdown-rendered) :is(p, li),
+body.srp-justify .markdown-source-view.mod-cm6.is-live-preview .cm-content > .cm-line:not(.HyperMD-header):not(.HyperMD-codeblock):not(.HyperMD-table-row) {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+body.srp-justify :is(.markdown-preview-view, .markdown-rendered) :is(td, th) :is(p, li),
+body.srp-justify :is(.markdown-preview-view, .markdown-rendered) :is(td, th) {
+  text-align: left;
+}
+
+/* Academic: smaller table text */
+
+body.srp-compact-tables :is(.markdown-preview-view, .markdown-rendered) table:not(.table-view-table),
+body.srp-compact-tables .markdown-source-view.mod-cm6 .cm-table-widget table {
+  font-size: 0.88em;
+}
+
+body.srp-compact-tables :is(.markdown-preview-view, .markdown-rendered, .markdown-source-view.mod-cm6) {
+  --table-text-size: 1em;
+  --table-header-size: 1em;
+}
+
+/* Academic: paper-style footnotes */
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) sup.footnote-ref,
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) sup[data-footnote-id] {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) sup :is(a.footnote-link, a) {
+  color: var(--link-color);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+body.srp-paper-footnotes .markdown-source-view.mod-cm6 .cm-footref {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) :is(section.footnotes, .footnotes) {
+  margin-top: 2.2em;
+  font-size: 0.86em;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) :is(hr.footnotes-sep, .footnotes > hr) {
+  width: 30%;
+  margin: 0 0 0.8em 0;
+  border: 0;
+  border-top: 1px solid var(--text-faint);
+}
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) .footnotes ol {
+  padding-left: 1.6em;
+}
+
+body.srp-paper-footnotes :is(.markdown-preview-view, .markdown-rendered) .footnotes li {
+  margin-bottom: 0.25em;
+}
+
+/* Academic: paper-style abstract callout */
+
+body.srp-paper-abstract .callout[data-callout="abstract"],
+body.srp-paper-abstract .callout[data-callout="summary"] {
+  --callout-color: var(--text-muted);
+  margin: 1.2em 7%;
+  padding: 0.2em 0 0.4em;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.92em;
+  text-align: justify;
+}
+
+body.srp-paper-abstract .callout:is([data-callout="abstract"], [data-callout="summary"]) .callout-title {
+  justify-content: center;
+  padding: 0 0 0.4em;
+  color: var(--text-normal);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+body.srp-paper-abstract .callout:is([data-callout="abstract"], [data-callout="summary"]) .callout-icon {
+  display: none;
+}
+
+body.srp-paper-abstract .callout:is([data-callout="abstract"], [data-callout="summary"]) .callout-content {
+  padding: 0;
+  background: transparent;
+}
+
+/* Academic: paper title in PDF */
+
+@media print {
+  body.srp-print-paper-title :is(.inline-title, .markdown-preview-view > h1:first-child, .markdown-preview-view > div:nth-child(-n + 3) > h1) {
+    margin: 0.4em 0 1.4em;
+    padding-bottom: 0;
+    border-bottom: 0;
+    text-align: center;
+    font-size: 1.9em;
+    font-style: normal;
+    line-height: 1.3;
+  }
+
+  body.srp-print-paper-title :is(.inline-title, .markdown-preview-view > h1:first-child, .markdown-preview-view > div:nth-child(-n + 3) > h1)::after {
+    display: none;
+  }
+
+  body.srp-print-paper-title :is(.metadata-container, .frontmatter-container, .mod-frontmatter, pre.frontmatter) {
+    display: none !important;
+  }
+}
+
+/* Academic: captions (the srp-citations plugin marks them; the theme styles them) */
+
+:is(.markdown-preview-view, .markdown-rendered) .internal-embed.image-embed[data-srp-caption] {
+  display: block;
+  text-align: center;
+}
+
+:is(.markdown-preview-view, .markdown-rendered) .internal-embed.image-embed[data-srp-caption]::after {
+  content: attr(data-srp-caption);
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.88em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+body :is(.markdown-preview-view, .markdown-rendered) p.srp-table-caption.srp-table-caption {
+  margin: 1.2em 0 0.3em;
+  text-align: center;
+  font-size: 0.88em;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.srp-cite {
+  cursor: pointer;
+}
+
+@media print {
+  body.srp-print-numbering .markdown-preview-view p.srp-table-caption {
+    counter-increment: srp-table;
+  }
+
+  body.srp-print-numbering .markdown-preview-view p.srp-table-caption::before {
+    content: var(--srp-table-label) " " counter(srp-table) ". ";
+  }
+
+  body.srp-print-numbering .markdown-preview-view div:has(> p.srp-table-caption) + div table:not(.table-view-table) {
+    counter-increment: none;
+  }
+
+  body.srp-print-numbering .markdown-preview-view div:has(> p.srp-table-caption) + div table:not(.table-view-table)::before {
+    content: none;
+    display: none;
+  }
+
+  .markdown-preview-view div:has(> p.srp-table-caption) {
+    break-after: avoid-page;
+  }
+
+  body.srp-print-plain-links .markdown-preview-view a.internal-link {
+    color: inherit !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  body.srp-print-hr-page-break .markdown-preview-view > hr {
+    break-after: page;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    border: 0;
+  }
+}
+
+/* Academic: captions and cross-references in every view (data from the srp-citations plugin) */
+
+.markdown-source-view.mod-cm6 .internal-embed.image-embed[data-srp-caption]::after {
+  content: attr(data-srp-caption);
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.88em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.srp-table-caption-line {
+  text-align: center;
+  font-size: 0.88em;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.srp-caption-label {
+  font-weight: 700;
+}
+
+.srp-xref {
+  color: var(--link-color);
+}
+
+.srp-xref.is-unresolved {
+  color: var(--text-error);
+}
+
+@media screen {
+  body.srp-print-numbering :is(.markdown-preview-view, .markdown-rendered) p.srp-table-caption[data-srp-number]::before {
+    content: var(--srp-table-label) " " attr(data-srp-number) ". ";
+  }
+
+  body.srp-print-numbering :is(.markdown-preview-view, .markdown-rendered, .markdown-source-view.mod-cm6) .internal-embed.image-embed[data-srp-caption][data-srp-number]::after {
+    content: var(--srp-figure-label) " " attr(data-srp-number) ". " attr(data-srp-caption);
+  }
+}
+
+/* Live Preview matches reading view: headings, table cells, reference list */
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line:is(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6) {
+  line-height: 1.24;
+  letter-spacing: -0.028em;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-header-1 {
+  position: relative;
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--srp-accent-strong) 12%, transparent);
+  color: var(--srp-text-strong);
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-header-1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: var(--srp-h1-rule-width, 74px);
+  height: 2px;
+  border-radius: 999px;
+  background: var(--srp-accent-strong);
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-header-2 {
+  padding-left: 0.7rem;
+  border-left: 3px solid color-mix(in srgb, var(--srp-accent-strong) 18%, transparent);
+  color: var(--srp-text-strong);
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-header-3 {
+  color: var(--srp-text-strong);
+}
+
+/* An empty line stands in for paragraph spacing, so keep it about one paragraph margin tall,
+ * as in reading view, instead of a full text line. */
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-content > .cm-line:not(.cm-active):has(> br:only-child) {
+  line-height: 0.9em;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-line:is(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6) .cm-header {
+  letter-spacing: inherit;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6 .cm-table-widget :is(td, th) {
+  padding: 0;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6 .cm-table-widget td .table-cell-wrapper {
+  padding: calc(var(--srp-table-padding-y) + 0.12em) 0.9rem;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6 .cm-table-widget th .table-cell-wrapper {
+  padding: calc(var(--srp-table-padding-y) + 0.32em) 0.9rem;
+}
+
+body.srp-reference-list .markdown-source-view.mod-cm6.is-live-preview .cm-line.srp-ref-line {
+  padding-inline-start: 2.4em !important;
+  text-indent: -2.4em !important;
+  font-size: 0.94em;
+  line-height: 1.6;
+  padding-bottom: 0.3em;
+}
+
+body.srp-reference-list .markdown-source-view.mod-cm6.is-live-preview .cm-line.srp-ref-line:not(.cm-active) .cm-formatting-list {
+  display: none;
+}
+
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .list-bullet::after {
+  background-color: color-mix(in srgb, var(--srp-link-custom, var(--srp-link)) 92%, var(--text-normal) 8%);
+  border-color: color-mix(in srgb, var(--srp-link-custom, var(--srp-link)) 92%, var(--text-normal) 8%);
+}
+
+/* Reading view indents lists by the li margin; give Live Preview list lines the same offset. */
+:is(.theme-light, .theme-dark) .markdown-source-view.mod-cm6.is-live-preview .cm-content > .cm-line.HyperMD-list-line:not(.srp-ref-line) {
+  margin-inline-start: 1.62em !important;
 }

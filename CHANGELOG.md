@@ -1,6 +1,24 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 - 2026-11-26
+
+### Research writing
+- Added an Academic section in Style Settings: Korean line breaking between words (on by default), justified body text, smaller table text, paper-style footnotes, a paper-style abstract callout, a reference list layout (on by default), numbering of headings, tables, and figures in PDF with renamable Table/Figure labels, plain internal links in PDF, `---` as a PDF page break, and a centered paper title in PDF. Everything except Korean line breaking and the reference list is off by default.
+- Added a Link color preset (Links and Tags): Theme red or Academic blue. Citation numbers such as `[14]` take the link color.
+- Added a Table style option (Tables): Paper or IEEE. IEEE draws a top rule, a header rule, light row rules, and a bottom rule, and fits the table to its content. A single note can opt in with `cssclasses: [ieee-table]`.
+- Added a PDF export section with "Keep blocks together in PDF" (on by default): headings never sit alone at the bottom of a page, short tables, figures, callouts, and code stay on one page, and long tables repeat their header.
+- Added styling for table captions, figure captions, and cross-references (`.srp-table-caption`, `data-srp-caption`, `data-srp-number`, `.srp-xref`, `.srp-cite`).
+- Added the companion plugin SRP Citations 0.3.0 in `plugin/srp-citations` and as the release asset `srp-citations.zip`: citation color in every view, click to jump and hover to preview a reference, table and figure captions, `@tab:`/`@fig:` cross-references, a command that renumbers citations by first appearance, and an estimated PDF page count in the status bar.
+
+### Live Preview
+- Live Preview now matches reading view more closely: H1 rule and H2 side bar, heading line height and letter spacing, table cell padding, list bullet color and indent, the reference list layout, and empty lines kept to paragraph-spacing height.
+
+### Explorer and fixes
+- Calmed the file explorer: rows sit plainly on the paper with no cards; hover shows a soft grey tint with a red name, and the open file a faint red tint with its red underline, all with 6px corners.
+- Set file names to the folder ink at weight 450 against bold folders, tightened rows, and added a small gap between top-level folders.
+- Turned the path from the root to the open file from red to dark ink, so red marks only the open file.
+- Rendered Hangul in code and inline code in SUIT.
+- Fixed table cells that contain text and a single line break: they were treated as empty rows and their lines overlapped. Only truly empty cells use the compact row spacing now.
 
 ## 0.4.0 - 2026-10-27
 

@@ -1,0 +1,10 @@
+{
+  "id": "srp-citations",
+  "name": "SRP Citations",
+  "version": "0.3.0",
+  "minAppVersion": "1.4.0",
+  "description": "Paper writing helpers for Saint Red Paper: citation color, jump, hover, and renumbering; figure and table captions in every view; @tab:/@fig: cross-references; PDF page estimate.",
+  "author": "saintkim",
+  "isDesktopOnly": false,
+  "authorUrl": "https://github.com/saint0721"
+}
